@@ -4,75 +4,295 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sandesh Subedi | Agriculture & AI Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f4f7f4; }
-        header { background: #2d5a27; color: white; padding: 40px 20px; text-align: center; border-radius: 8px; }
-        h1 { margin: 0; }
-        .contact-info { margin-top: 10px; font-size: 0.9em; }
-        .contact-info a { color: #fff; text-decoration: underline; margin: 0 10px; }
-        section { background: white; padding: 20px; margin-top: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h2 { color: #2d5a27; border-bottom: 2px solid #2d5a27; padding-bottom: 5px; }
-        .job { margin-bottom: 15px; }
-        .job-title { font-weight: bold; color: #444; }
-        .date { color: #777; font-style: italic; font-size: 0.9em; }
-        .publication { margin-bottom: 10px; border-left: 4px solid #8ebf8a; padding-left: 10px; }
-        footer { text-align: center; margin-top: 40px; color: #777; font-size: 0.8em; }
+        :root {
+            --primary: #2d5a27; /* Forest Green */
+            --secondary: #4f772d;
+            --accent: #90a955;
+            --light: #ecf3e9;
+            --dark: #132a13;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            background-color: #f9fbf9;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--primary);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        nav a:hover { color: var(--accent); }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(rgba(19, 42, 19, 0.8), rgba(19, 42, 19, 0.8)), url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1000'); /* Agriculture background */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        header h1 { margin: 10px 0; font-size: 2.5rem; letter-spacing: 2px; }
+
+        /* Layout */
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+
+        section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 10px;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Career Objective */
+        .objective-box {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* List Styling */
+        .item { margin-bottom: 25px; }
+        .item-title { font-weight: bold; font-size: 1.2rem; color: var(--secondary); }
+        .item-subtitle { font-weight: 600; color: #444; }
+        .date { color: #888; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        /* Publications */
+        .pub-card {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .pub-card a { color: var(--primary); font-weight: bold; text-decoration: none; }
+
+        /* Skills Grid */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .gallery img:hover { transform: scale(1.05); }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            section { padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
+<nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#publications">Research</a>
+    <a href="#experience">Experience</a>
+    <a href="#trainings">Trainings</a>
+    <a href="#skills">Skills</a>
+    <a href="#gallery">Gallery</a>
+</nav>
+
 <header>
+    <!-- REPLACE THE URL BELOW WITH YOUR ACTUAL PHOTO LATER -->
+    <img src="https://via.placeholder.com/180" alt="Sandesh Subedi" class="profile-img">
     <h1>SANDESH SUBEDI</h1>
-    <p>B.Sc. Agriculture Graduate | AI & Computer Vision in Horticulture</p>
-    <div class="contact-info">
-        📍 Putalibazar-13, Syangja, Nepal | 📞 +9779866009867<br>
-        <a href="mailto:Subedisandesh24@gmail.com">Email</a> | 
-        <a href="https://linkedin.com/in/sandeshsubedi24" target="_blank">LinkedIn</a>
+    <p><i class="fas fa-seedling"></i> B.Sc. Agriculture Graduate | M.Sc. Horticulture Student</p>
+    <div style="margin-top: 20px;">
+        <a href="mailto:Subedisandesh24@gmail.com" style="color:white; margin: 0 10px;"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://linkedin.com/in/sandeshsubedi24" style="color:white; margin: 0 10px;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <span style="margin: 0 10px;"><i class="fas fa-phone"></i> +9779866009867</span>
     </div>
 </header>
 
-<section id="about">
-    <h2>Career Objective</h2>
-    <p>A highly motivated and enthusiastic B.Sc. Agriculture graduate with a strong interest in integration of computer vision particularly in the fields of Agriculture. Dedicated team player with technical and analytical skills in agronomy, horticulture, and AI integration.</p>
-</section>
+<div class="container">
 
-<section id="education">
-    <h2>Education</h2>
-    <div class="job">
-        <div class="job-title">M.Sc. Agriculture (Horticulture)</div>
-        <div>Agriculture and Forestry University, Chitwan</div>
-        <span class="date">2025 - Present</span>
-        <p><strong>Thesis:</strong> A Comparative Study of AI and Manual Data Collection for Assessing Tomato Yield.</p>
-    </div>
-    <div class="job">
-        <div class="job-title">B.Sc. Agriculture (78.3%)</div>
-        <div>Tribhuvan University, IAAS Lamjung</div>
-        <span class="date">2019 - 2023</span>
-    </div>
-</section>
+    <section id="about">
+        <h2><i class="fas fa-user-tie"></i> Career Objective</h2>
+        <div class="objective-box">
+            A highly motivated and enthusiastic B.Sc. Agriculture graduate with a strong interest in integration of computer 
+            vision particularly in the fields of Agriculture. My research background includes involvement in projects across 
+            various disciplines such as agronomy, horticulture and integration of AI in agriculture. I am a dedicated team 
+            player with demonstrated interpersonal and leadership abilities.
+        </div>
+    </section>
 
-<section id="publications">
-    <h2>Selected Publications</h2>
-    <div class="publication">
-        <strong>Subedi, S.</strong>, & Adhikari, S. (2024). Effects of mulching materials on growth and yield of brinjal. <i>Agriculture Development Journal</i>.
-    </div>
-    <div class="publication">
-        Jaiswal, M., Kharel, R., & <strong>Subedi, S.</strong> (2024). Response of spring rice varieties on different nitrogen management. <i>Agronomy Journal of Nepal</i>.
-    </div>
-</section>
+    <section id="education">
+        <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+        
+        <div class="item">
+            <span class="date">2025 - Present</span>
+            <div class="item-title">Masters of Science in Agriculture (Horticulture)</div>
+            <div class="item-subtitle">Agriculture and Forestry University (AFU), Chitwan, Nepal</div>
+            <p><strong>MS Thesis:</strong> A Comparative Study of AI and Manual Data Collection for Assessing Tomato (Solanum lycopersicum L.) Yield and Quality in Response to Mulching and Fertilizer Treatments at Kaski District.</p>
+        </div>
 
-<section id="skills">
-    <h2>Technical Skills</h2>
-    <ul>
-        <li><strong>Python:</strong> Image detection, Classification, Segmentation</li>
-        <li><strong>Software:</strong> Arc-GIS, RStudio, GenStat, SPSS, Microsoft Office</li>
-        <li><strong>Agri-Tech:</strong> IPM, Vermicompost, Biochar Preparation</li>
-    </ul>
-</section>
+        <div class="item">
+            <span class="date">2019 - 2023</span>
+            <div class="item-title">Bachelors of Science in Agriculture</div>
+            <div class="item-subtitle">Tribhuvan University, IAAS Lamjung, Nepal</div>
+            <p>Percentage: 78.3% | Merit Scholarship Awardee</p>
+            <ul>
+                <li>Bachelor's thesis: "Effect of Mulching Materials on Growth and Yield of Brinjal"</li>
+                <li>Best Presentator during the defence of Soil Science & Horticulture Department</li>
+            </ul>
+        </div>
 
-<footer>
-    &copy; 2024 Sandesh Subedi. Built with GitHub Pages.
-</footer>
+        <div class="item">
+            <span class="date">2016 - 2018</span>
+            <div class="item-title">Higher Secondary School (Biology with Extra Maths)</div>
+            <div class="item-subtitle">Prativa Secondary School, Kaski, Nepal</div>
+            <p>GPA: 3.26/4.0</p>
+        </div>
+    </section>
 
-</body>
-</html>
+    <section id="publications">
+        <h2><i class="fas fa-book"></i> Research Publications</h2>
+        
+        <div class="pub-card">
+            <strong>Subedi, S.</strong>, & Adhikari, S. (2024). Effects of mulching materials on growth and yield of brinjal. <i>Agriculture Development Journal</i>. 
+            <br><a href="https://doi.org/10.3126/adj.v17i1.67882" target="_blank">View Paper <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="pub-card">
+            Jaiswal, M., Kharel, R., & <strong>Subedi, S.</strong> (2024). Response of spring rice varieties on different nitrogen management practices. <i>Agronomy Journal of Nepal</i>. 
+            <br><a href="https://doi.org/10.3126/ajn.v8i1.70853" target="_blank">View Paper <i class="fas fa-external-link-alt"></i></a>
+        </div>
+
+        <div class="pub-card">
+            Malla, A. B., <strong>Subedi, S.</strong>, et al. (2024). Ecological Status and Habitat Characteristics of Panchaule in Mustang. <i>The Journal of Agriculture and Environment</i>.
+        </div>
+
+        <div class="pub-card">
+            Dahal, S., <strong>Subedi, S.</strong>, & Paudel, N. (2021). A review on Diploknema butyracea (Chiuri) for production and uses. <i>Journal of Multidisciplinary Sciences</i>.
+        </div>
+
+        <div class="pub-card">
+            <strong>Subedi, S.</strong> (2024). Algal diversity in Nepal and its applications: Current insights and future prospects. <i>Science Heritage Journal</i>.
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2><i class="fas fa-briefcase"></i> Professional Experience</h2>
+
+        <div class="item">
+            <span class="date">March - May 2024</span>
+            <div class="item-title">Province Assistant</div>
+            <div class="item-subtitle">Daayitwa NGO, Kaski</div>
+            <ul>
+                <li>Supported GEEP implementation across five rural municipalities in Gandaki Province.</li>
+                <li>Collaborated with provincial and local governments to promote inclusive employment strategies.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <span class="date">Jan 2024 - Dec 2024</span>
+            <div class="item-title">Agriculture Instructor</div>
+            <div class="item-subtitle">Shree Mahendra Secondary School, Bhalam, Kaski</div>
+            <ul>
+                <li>Delivered theoretical and practical education on fruit and vegetable cultivation.</li>
+                <li>Supervised "Learn & Earn Program" for grades 9-12.</li>
+                <li>Focal point for JICA Partnership Program coordinating agricultural activities.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <span class="date">June 2022 - Dec 2022</span>
+            <div class="item-title">Research Assistant</div>
+            <div class="item-subtitle">Horticulture Research Station, NARC, Malepatan</div>
+            <ul>
+                <li>Conducted research on varietal improvement of vegetables (brinjal, chili, tomato, yam).</li>
+                <li>Managed crop health, soil fertility, and pest control for dragon fruit and papaya trials.</li>
+                <li>Led field data collection and interpretation for weekly progress updates.</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <span class="date">April 2022 - June 2022</span>
+            <div class="item-title">Census Enumerator</div>
+            <div class="item-subtitle">District Statistics Office, Syangja</div>
+            <ul>
+                <li>Collected agricultural census data for the
