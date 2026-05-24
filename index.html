@@ -3,215 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandesh Subedi | Agriculture & AI Specialist</title>
+    <title>Sandesh Subedi | Agriculture & AI Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1b4332;
+            --primary: #1b4332; 
             --secondary: #2d6a4f;
             --accent: #d4a373;
-            --glass: rgba(255, 255, 255, 0.85);
-            --bg: #f0f2f0;
-            --text: #081c15;
-            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-light: #f8faf8;
+            --text-dark: #081c15;
+            --glass: rgba(255, 255, 255, 0.9);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Plus Jakarta Sans', sans-serif; 
-            background: var(--bg); 
-            color: var(--text); 
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+        body { font-family: 'Inter', sans-serif; line-height: 1.8; color: var(--text-dark); background-color: var(--bg-light); overflow-x: hidden; }
 
-        /* Modern Glass Nav */
+        /* Modern Glass Navigation */
         nav {
             position: fixed;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%;
-            max-width: 1000px;
+            width: 95%;
+            max-width: 1100px;
             background: var(--glass);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.3);
             border-radius: 50px;
-            padding: 10px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 5px;
             z-index: 2000;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         nav a {
-            padding: 10px 18px;
-            text-decoration: none;
             color: var(--primary);
+            text-decoration: none;
             font-weight: 700;
             font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            padding: 10px 15px;
             border-radius: 30px;
-            transition: var(--transition);
+            transition: 0.3s ease;
         }
 
-        nav a.active {
+        nav a:hover, nav a.active {
             background: var(--primary);
             color: white;
         }
 
         /* Hero Header */
         header {
-            padding: 140px 20px 60px;
+            background: linear-gradient(135deg, #081c15 0%, #1b4332 100%);
+            color: white;
+            padding: 140px 20px 80px;
             text-align: center;
-            background: linear-gradient(180deg, #fff 0%, var(--bg) 100%);
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 170px;
+            height: 170px;
             border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            border: 4px solid var(--accent);
             object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        h1 { font-size: 2.8rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
-        .subtitle { font-size: 1.1rem; color: var(--secondary); margin-bottom: 25px; font-weight: 400; }
+        header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 10px; }
+        header p { font-size: 1.2rem; opacity: 0.9; font-weight: 300; }
 
-        .contact-bar { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .contact-bar a { 
-            color: var(--text); 
-            text-decoration: none; 
-            font-size: 0.85rem; 
-            font-weight: 600; 
-            display: flex; 
-            align-items: center; 
-            gap: 8px;
-            padding: 8px 15px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-        }
+        .contact-bar { margin-top: 30px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .contact-bar a { color: white; text-decoration: none; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
 
-        /* Section Handling */
-        .content-wrapper {
-            max-width: 900px;
-            margin: 0 auto 100px;
+        /* Section Container Handling */
+        .content-container {
+            max-width: 1000px;
+            margin: 40px auto 100px;
             padding: 0 20px;
-            min-height: 500px;
+            min-height: 400px;
         }
 
-        .content-section {
-            display: none;
-            animation: slideIn 0.6s ease-out forwards;
+        .section-content {
+            display: none; /* Hidden by default */
+            background: white;
+            padding: 50px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            animation: fadeInSlide 0.6s ease-out forwards;
         }
 
-        .content-section.active { display: block; }
+        .section-content.active { display: block; }
 
-        @keyframes slideIn {
+        @keyframes fadeInSlide {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .card {
-            background: white;
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-            margin-bottom: 30px;
-        }
-
-        h2 { 
-            font-size: 1.8rem; 
-            color: var(--primary); 
-            margin-bottom: 30px; 
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        h2::after { content: ""; flex: 1; height: 1px; background: #eee; }
+        h2 { color: var(--primary); border-left: 6px solid var(--accent); padding-left: 15px; text-transform: uppercase; font-size: 1.5rem; margin-bottom: 35px; }
 
         /* Item UI */
-        .item { margin-bottom: 35px; border-left: 3px solid var(--accent); padding-left: 20px; }
-        .item-title { font-size: 1.25rem; font-weight: 800; color: var(--primary); }
-        .item-org { color: var(--secondary); font-weight: 600; display: block; margin: 4px 0; }
-        .item-date { font-size: 0.85rem; font-weight: 700; color: var(--accent); text-transform: uppercase; }
-        
-        ul { list-style: none; margin-top: 15px; }
-        li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 0.95rem; color: #444; }
-        li::before { content: "→"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .item { margin-bottom: 45px; border-bottom: 1px solid #eee; padding-bottom: 30px; }
+        .item:last-child { border: none; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .item-title { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+        .item-date { font-weight: 700; color: var(--accent); font-size: 0.9rem; }
+        .item-org { font-weight: 700; color: var(--secondary); display: block; margin: 8px 0; font-size: 1.1rem; }
 
-        /* Buttons */
-        .btn {
+        ul { padding-left: 20px; margin-top: 15px; }
+        li { margin-bottom: 10px; font-size: 0.95rem; color: #444; }
+
+        .cert-btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            background: white;
+            color: var(--primary);
             padding: 10px 20px;
-            background: var(--primary);
-            color: white;
+            border-radius: 8px;
             text-decoration: none;
-            border-radius: 12px;
             font-size: 0.85rem;
             font-weight: 700;
+            border: 2px solid var(--primary);
             margin-top: 15px;
-            transition: var(--transition);
+            margin-right: 10px;
+            transition: 0.3s;
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(27,67,50,0.2); }
-        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: white; }
+        .cert-btn:hover { background: var(--primary); color: white; }
 
-        /* Skills Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .skill-box { background: #f8fbf9; padding: 25px; border-radius: 15px; border: 1px solid #eef2ef; }
-        .skill-box h3 { font-size: 1rem; color: var(--primary); margin-bottom: 15px; }
-        .tag { display: inline-block; background: white; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        .project-btn { background: #e63946; color: white; border: none; }
+        .project-btn:hover { background: #b91c1c; }
 
-        /* App Box */
-        .app-card {
-            background: linear-gradient(135deg, #1b4332 0%, #081c15 100%);
-            color: white;
-            padding: 35px;
-            border-radius: 24px;
-            margin-top: 20px;
-        }
-        .app-card h3 { color: var(--accent); margin-bottom: 15px; }
-        .app-card p { opacity: 0.9; font-size: 0.95rem; margin-bottom: 20px; }
+        /* Skills/Training Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .skill-card { background: #fdfdfd; padding: 25px; border-radius: 15px; border: 1px solid #eee; }
+        .tag { display: inline-block; background: #e9f5ee; color: var(--primary); padding: 5px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin: 4px; }
 
-        /* References Footer */
-        .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-        .ref-card { background: #fff; padding: 25px; border-radius: 15px; border-bottom: 4px solid var(--accent); }
-        .ref-card h4 { color: var(--primary); margin-bottom: 8px; }
-        .ref-card p { font-size: 0.85rem; color: #666; margin: 2px 0; }
+        /* Research Descriptions */
+        .research-box { background: #fff; border: 1px solid var(--accent); padding: 30px; border-radius: 15px; margin-top: 30px; border-left: 5px solid var(--secondary); }
+        .research-box h3 { color: var(--primary); margin-bottom: 15px; }
+
+        /* Footer References */
+        footer { background: #081c15; color: white; padding: 80px 20px; text-align: center; }
+        .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 40px auto; text-align: left; }
+        .ref-card { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 15px; border-top: 3px solid var(--accent); }
+        .ref-card h4 { color: var(--accent); margin-bottom: 8px; }
+        .ref-card p { font-size: 0.85rem; opacity: 0.8; margin: 2px 0; }
 
         @media (max-width: 768px) {
-            nav { top: auto; bottom: 20px; width: 95%; padding: 5px; overflow-x: auto; justify-content: flex-start; }
-            h1 { font-size: 2rem; }
-            .card { padding: 25px; }
+            nav { bottom: 20px; top: auto; width: 95%; overflow-x: auto; justify-content: flex-start; }
+            header h1 { font-size: 2.2rem; }
+            .section-content { padding: 30px 20px; }
         }
     </style>
 </head>
 <body>
 
-<nav id="mainNav">
-    <a href="#" onclick="showSection('about', this)" class="active">About</a>
-    <a href="#" onclick="showSection('experience', this)">Experience</a>
-    <a href="#" onclick="showSection('education', this)">Education</a>
-    <a href="#" onclick="showSection('publications', this)">Research</a>
-    <a href="#" onclick="showSection('skills', this)">Skills</a>
-    <a href="#" onclick="showSection('refs', this)">References</a>
+<nav id="nav">
+    <a href="javascript:void(0)" onclick="openTab('about', this)" class="active">About</a>
+    <a href="javascript:void(0)" onclick="openTab('experience', this)">Experience</a>
+    <a href="javascript:void(0)" onclick="openTab('education', this)">Education</a>
+    <a href="javascript:void(0)" onclick="openTab('publications', this)">Research</a>
+    <a href="javascript:void(0)" onclick="openTab('training', this)">Training</a>
+    <a href="javascript:void(0)" onclick="openTab('skills', this)">Skills</a>
+    <a href="javascript:void(0)" onclick="openTab('refs', this)">References</a>
 </nav>
 
 <header>
     <img src="IMG_3427.jpg" alt="Sandesh Subedi" class="profile-img">
-    <h1>Sandesh Subedi</h1>
-    <p class="subtitle">M.Sc. Horticulture Scholar | AI & Digital Agriculture Researcher</p>
+    <h1>SANDESH SUBEDI</h1>
+    <p>B.Sc. Agriculture Graduate | <strong>M.Sc. Horticulture Scholar</strong></p>
     <div class="contact-bar">
         <a href="mailto:Subedisandesh24@gmail.com"><i class="fas fa-envelope"></i> Email</a>
         <a href="tel:+9779866009867"><i class="fas fa-phone"></i> +977 9866009867</a>
@@ -219,199 +184,282 @@
     </div>
 </header>
 
-<main class="content-wrapper">
+<div class="content-container">
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="content-section active">
-        <div class="card">
-            <h2>About Me</h2>
-            <p>I am <strong>Sandesh Subedi</strong>, son of Rishiram Subedi and Sabitri Devi Subedi, born on 25 April 2001 in Syangja, Nepal. Growing up in a rural agricultural community inspired me to develop a strong interest in farming and innovative solutions for the agricultural sector.</p>
-            <p style="margin-top:15px;">My academic and professional interests focus on <strong>artificial intelligence (AI), digital agriculture, and technology-driven innovation</strong>. I specialize in applying computer vision and machine learning for crop monitoring, disease detection, and yield estimation, bridging the gap between traditional farming and modern technology.</p>
-        </div>
+    <section id="about" class="section-content active">
+        <h2>About Me</h2>
+        <p>I am <strong>Sandesh Subedi</strong>, son of Rishiram Subedi and Sabitri Devi Subedi, born on 25 April 2001 (2058/01/12 B.S.) in Syangja, Nepal. Growing up in a rural agricultural community, I witnessed the dedication, hard work, and resilience of farmers in my village. Observing how agriculture shaped the livelihood of people around me inspired me to develop a strong interest in farming, agricultural development, and innovative solutions for the agricultural sector.</p>
+        <p style="margin-top:15px;">I completed my school-level education at Shishu Niketan Secondary School. I am a graduate of B.Sc. Agriculture from Tribhuvan University and currently pursuing an M.S. in Horticulture at Agriculture and Forestry University.</p>
+        <p style="margin-top:15px;">My academic and professional interests focus on agriculture, <strong>artificial intelligence (AI), digital agriculture, research, and technology-driven innovation</strong>. I am particularly interested in the application of AI, computer vision, machine learning, and image analysis in agriculture, especially in areas such as crop monitoring, disease detection, yield estimation, precision agriculture, and smart farming systems.</p>
+        <p style="margin-top:15px;">My research and professional experiences include work in agricultural research, image-based data analysis, computer vision applications, tomato crop studies, digital agriculture, and AI-driven agricultural tools. I am passionate about integrating modern technologies with agricultural science to address practical challenges faced by farmers and agricultural communities.</p>
+        <p style="margin-top:15px;">I aspire to contribute to the advancement of AI-powered agriculture, horticultural innovation, and sustainable agricultural development, helping bridge the gap between traditional farming practices and emerging digital technologies in Nepal and beyond.</p>
     </section>
 
     <!-- EXPERIENCE SECTION -->
-    <section id="experience" class="content-section">
-        <div class="card">
-            <h2>Experience</h2>
-            
-            <div class="item">
-                <span class="item-date">Nov - Jan</span>
+    <section id="experience" class="section-content">
+        <h2>Professional Experience</h2>
+
+        <div class="item">
+            <div class="item-header">
                 <h3 class="item-title">Trainer</h3>
-                <span class="item-org">Stromme Foundation, Chitwan</span>
-                <ul>
-                    <li>Program organized by <strong>Stromme Foundation</strong> with technical support from <strong>Kantipur Bhauprabidhik Shikshyalaya</strong>.</li>
-                    <li>Hands-on training in: Nursery & soil management, horticulture, mushroom cultivation, apiculture, and entrepreneurship.</li>
-                </ul>
-                <a href="Stromme Foundation.jpeg" target="_blank" class="btn btn-outline">View Certificate</a>
+                <span class="item-date">Nov - Jan</span>
             </div>
+            <span class="item-org">Stromme Foundation, Chitwan</span>
+            <ul>
+                <li>Program organized by <strong>Stromme Foundation</strong> and technical support given by <strong>Kantipur Bhauprabidhik Shikshyalaya</strong>.</li>
+                <li>Teach with strong focus on <strong>practical, hands-on agricultural education</strong>.</li>
+                <li>Deliver practical and theoretical training on key areas: Introductory agriculture, social mobilization, nursery & soil management, fertilizer & pesticide use, horticulture, agronomical crops, post-harvest handling, seed production, mushroom cultivation, apiculture, pisciculture, sericulture, duck farming, agricultural marketing, communication, and entrepreneurship development.</li>
+            </ul>
+            <a href="Stromme Foundation.jpeg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+        </div>
 
-            <div class="item">
-                <span class="item-date">March - May 2024</span>
+        <div class="item">
+            <div class="item-header">
                 <h3 class="item-title">Province Assistant</h3>
-                <span class="item-org">Daayitwa NGO, Kaski</span>
-                <ul>
-                    <li>Accelerated rural enterprises and GEEP implementation across five municipalities in Gandaki Province.</li>
-                    <li>Collaborated with governments on inclusive employment and policy monitoring.</li>
-                </ul>
+                <span class="item-date">March - May 2024</span>
             </div>
+            <span class="item-org">Daayitwa NGO, Kaski</span>
+            <ul>
+                <li>Contributed to accelerating growth-oriented rural enterprises by supporting capacity-building initiatives for local entrepreneurs.</li>
+                <li>Supported the implementation of <strong>GEEP</strong> across five rural municipalities in Gandaki Province (<strong>Jaljala, Hupsekot, Badigad, Siranchok, Myagde</strong>), facilitating grassroots engagement and coordination.</li>
+                <li>Collaborated with provincial and local governments to promote inclusive employment strategies and local economic development.</li>
+                <li>Assisted in stakeholder coordination and policy outreach, engaging local leaders, entrepreneurs, and diverse networks for governance innovation.</li>
+                <li>Contributed to GEEP’s objective of building state capability for effective policy implementation through field-level and program monitoring.</li>
+            </ul>
+        </div>
 
-            <div class="item">
-                <span class="item-date">Jan 2024 - Dec 2024</span>
+        <div class="item">
+            <div class="item-header">
                 <h3 class="item-title">Agriculture Instructor</h3>
-                <span class="item-org">Shree Mahendra Secondary School, Bhalam</span>
-                <ul>
-                    <li>Managed the <strong>Learn & Earn Program</strong> and JICA Partnership Program activities.</li>
-                    <li>Guided students through the full crop production and marketing value chain.</li>
-                </ul>
-                <a href="Mahendra Ma vi.JPG" target="_blank" class="btn btn-outline">View Certificate</a>
+                <span class="item-date">Jan 2024 - Dec 2024</span>
             </div>
+            <span class="item-org">Shree Mahendra Secondary School, Bhalam, Kaski</span>
+            <ul>
+                <li>Delivered theoretical education on fruit and vegetable cultivation to grade 9 and 10 students using interactive teaching methods, ensuring alignment with the Curriculum Development Center’s syllabus.</li>
+                <li>Provided practical training by guiding students through all stages of crop production, including nursery preparation, seed sowing, irrigation, transplanting, intercultural operations, pest identification and control, harvesting, and marketing.</li>
+                <li>Supervised the <strong>Learn & Earn Program</strong> for grades 9-12, integrating value chain concepts through crop production, post-harvest handling, market sales, and fair profit distribution.</li>
+                <li>Served as the focal point between the <strong>JICA Partnership Program</strong> and Mahendra Secondary School, coordinating agricultural activities, ensuring project implementation, and aligning initiatives with the program’s logical framework.</li>
+            </ul>
+            <a href="Mahendra Ma vi.JPG" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+        </div>
 
-            <div class="item">
-                <span class="item-date">June 2022 - Dec 2022</span>
+        <div class="item">
+            <div class="item-header">
                 <h3 class="item-title">Research Assistant</h3>
-                <span class="item-org">Horticulture Research Station, NARC Malepatan</span>
-                <ul>
-                    <li>Varietal improvement research for vegetables and fruit crops.</li>
-                    <li>Managed disease control, soil fertility, and technical reports for weekly progress.</li>
-                </ul>
-                <a href="narc intenship.jpg" target="_blank" class="btn btn-outline">View Certificate</a>
+                <span class="item-date">June 2022 - Dec 2022</span>
             </div>
+            <span class="item-org">Horticulture Research Station, NARC Malepatan, Kaski</span>
+            <ul>
+                <li>Conducted research on varietal improvement of vegetable crops (e.g., brinjal, chilli, tomato, yam, radish, potato, beans, capsicum, cauliflower), fruit crops (e.g., papaya, dragon fruit, cucumber), and ornamental plants (e.g., gladiolus), while managing disease and pest control, soil fertility, and overall crop health.</li>
+                <li>Ensured appropriate field site selection for trials and provided technical inputs for optimized crop production.</li>
+                <li>Provided leadership and training to <strong>JTA</strong>, guiding them in field data collection, site supervision, and research implementation.</li>
+                <li>Developed and executed action plans, monitored progress, and conducted data recording, analysis, and interpretation.</li>
+            </ul>
+            <a href="narc intenship.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+        </div>
 
-            <div class="item">
-                <span class="item-date">April 2022 - June 2022</span>
+        <div class="item">
+            <div class="item-header">
                 <h3 class="item-title">Census Enumerator</h3>
-                <span class="item-org">District Statistics Office, Syangja</span>
-                <ul>
-                    <li>Led field operations for the <strong>National Census of Agriculture 2021/22</strong>.</li>
-                </ul>
-                <a href="Agricensus.jpg" target="_blank" class="btn btn-outline">View Certificate</a>
+                <span class="item-date">April 2022 - June 2022</span>
             </div>
+            <span class="item-org">District Statistics Office, Syangja</span>
+            <ul>
+                <li>Collected agricultural census data for the <strong>National Census of Agriculture 2021/22</strong>.</li>
+                <li>Led field operations, ensuring quality control and timely data collection through door-to-door visits.</li>
+                <li>Collaborated in teamwork, guiding enumerators and ensuring accurate data through <strong>FGDs</strong> and <strong>KIIs</strong>.</li>
+            </ul>
+            <a href="Agricensus.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
     </section>
 
     <!-- EDUCATION SECTION -->
-    <section id="education" class="content-section">
-        <div class="card">
-            <h2>Education</h2>
-            
-            <div class="item">
+    <section id="education" class="section-content">
+        <h2>Education</h2>
+        <div class="item">
+            <div class="item-header">
+                <h3 class="item-title">Masters of Science in Agriculture (Horticulture)</h3>
                 <span class="item-date">2025 - Present</span>
-                <h3 class="item-title">M.Sc. Agriculture (Horticulture)</h3>
-                <span class="item-org">Agriculture and Forestry University, Nepal</span>
-                <p><strong>MS Thesis:</strong> AI vs. Manual Data Collection for Assessing Tomato (<i>Solanum lycopersicum</i> L.) Yield & Quality.</p>
             </div>
+            <span class="item-org">Agriculture and Forestry University, Chitwan, Nepal</span>
+            <p style="margin-top:10px;"><strong>MS Thesis:</strong> A Comparative Study of AI and Manual Data Collection for Assessing Tomato (<i>Solanum lycopersicum</i> L.) Yield and Quality in Response to Mulching and Fertilizer Treatments at Kaski District.</p>
+        </div>
 
-            <div class="item">
+        <div class="item">
+            <div class="item-header">
+                <h3 class="item-title">Bachelors of Science in Agriculture</h3>
                 <span class="item-date">2019 - 2023</span>
-                <h3 class="item-title">B.Sc. Agriculture</h3>
-                <span class="item-org">Tribhuvan University, IAAS Lamjung</span>
-                <ul>
-                    <li>Result: <strong>78.3%</strong> (Merit Scholarship)</li>
-                    <li>Award: <strong>Best Presentator</strong> in Soil Science & Horticulture.</li>
-                </ul>
-                <a href="Upa.jpg" target="_blank" class="btn btn-outline">View Certificate</a>
-                <a href="Best Presentator.jpg" target="_blank" class="btn btn-outline">View Award</a>
             </div>
+            <span class="item-org">Tribhuvan University, IAAS Lamjung, Nepal</span>
+            <ul>
+                <li>Result: <strong>78.3%</strong> (Merit Scholarship)</li>
+                <li>Thesis: "Effect of Mulching Materials on Growth and Yield of Brinjal".</li>
+                <li>Award: <strong>Best Presentator</strong> during the defence of Soil Science & Horticulture Department.</li>
+            </ul>
+            <a href="Upa.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+            <a href="Best Presentator.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <h3 class="item-title">Higher Secondary School (+2)</h3>
+                <span class="item-date">2016 - 2018</span>
+            </div>
+            <span class="item-org">Prativa Secondary School Kaski, Nepal</span>
+            <p>GPA: <strong>3.26/4.0</strong> | Biology with extra Mathematics</p>
         </div>
     </section>
 
     <!-- PUBLICATIONS SECTION -->
-    <section id="publications" class="content-section">
-        <div class="card">
-            <h2>Publications</h2>
-            
-            <div class="item">
-                <p><strong>Subedi, S.</strong>, & Adhikari, S. (2024). Effects of mulching on growth and yield of brinjal. <i>Agriculture Development Journal</i>.</p>
-                <a href="https://doi.org/10.3126/adj.v17i1.67882" target="_blank" class="btn btn-outline">Read Journal</a>
-            </div>
+    <section id="publications" class="section-content">
+        <h2>Research Publications</h2>
+        <div class="pub-item" style="margin-bottom:30px; border-left:4px solid var(--accent); padding-left:15px;">
+            <p><strong>Subedi, S.</strong>, & Adhikari, S. (2024). Effects of mulching materials on growth and yield of brinjal. <i>Agriculture Development Journal</i>, 17(1), 135–143.</p>
+            <a href="https://doi.org/10.3126/adj.v17i1.67882" target="_blank" class="cert-btn"><i class="fas fa-link"></i> Read Publication</a>
+        </div>
+        <div class="pub-item" style="margin-bottom:30px; border-left:4px solid var(--accent); padding-left:15px;">
+            <p>Jaiswal, M., Kharel, R., & <strong>Subedi, S.</strong> (2024). Response of spring rice varieties on different nitrogen management practices in Kapilvastu, Nepal. <i>Agronomy Journal of Nepal</i>, 8(1), 45–56.</p>
+            <a href="https://doi.org/10.3126/ajn.v8i1.70853" target="_blank" class="cert-btn"><i class="fas fa-link"></i> Read Publication</a>
+        </div>
+        <div class="pub-item" style="margin-bottom:30px; border-left:4px solid var(--accent); padding-left:15px;">
+            <p>Malla, A. B., <strong>Subedi, S.</strong>, G.C., D. B., & Bhandari, J. (2024). Ecological Status, Threats, and Habitat Characteristics of Panchaule (<i>Dactylorhiza hatagirea</i>) in Ghasa of Mustang District. <i>The Journal of Agriculture and Environment</i>, 25, 99–107.</p>
+        </div>
+        <div class="pub-item" style="margin-bottom:30px; border-left:4px solid var(--accent); padding-left:15px;">
+            <p>Dahal, S., <strong>Subedi, S.</strong>, & Paudel, N. (2021). A review on <i>Diploknema butyracea</i> (Roxb.) H.J. Lam. (Chiuri) for production, uses, and strategy of management concerning Chepang communities in Nepal. <i>Journal of Multidisciplinary Sciences</i>, 3(16).</p>
+            <a href="https://doi.org/10.33888/jms.2021.316" target="_blank" class="cert-btn"><i class="fas fa-link"></i> Read Publication</a>
+        </div>
+        <div class="pub-item" style="margin-bottom:30px; border-left:4px solid var(--accent); padding-left:15px;">
+            <p><strong>Subedi, S.</strong> (2024). Algal diversity in Nepal and its applications: Current insights and future prospects. <i>Science Heritage Journal</i>, 8(2), 69–78.</p>
+            <a href="https://doi.org/10.26480/gws.02.2024.69.78" target="_blank" class="cert-btn"><i class="fas fa-link"></i> Read Publication</a>
+        </div>
+    </section>
 
-            <div class="item">
-                <p>Jaiswal, M., & <strong>Subedi, S.</strong> (2024). Nitrogen management practices in Kapilvastu. <i>Agronomy Journal of Nepal</i>.</p>
-                <a href="https://doi.org/10.3126/ajn.v8i1.70853" target="_blank" class="btn btn-outline">Read Journal</a>
+    <!-- TRAINING SECTION -->
+    <section id="training" class="section-content">
+        <h2>Trainings & Workshops</h2>
+        <div class="grid">
+            <div class="train-card">
+                <h4>IPM Training</h4>
+                <p>Caritas Nepal, 2023</p>
+                <a href="Ipm.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+            </div>
+            <div class="train-card">
+                <h4>Vermicompost Preparation</h4>
+                <p>Sustainable Agriculture, 2022</p>
+                <a href="Vermicompost Preparation.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+            </div>
+            <div class="train-card">
+                <h4>Biochar Preparation</h4>
+                <p>Sustainable Agriculture, 2022</p>
+                <a href="Biochar Preparation.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+            </div>
+            <div class="train-card">
+                <h4>Harihar Farmer Training</h4>
+                <p>Pokhara, 2024</p>
+                <a href="Harihar training.JPG" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+            </div>
+            <div class="train-card">
+                <h4>Agritech Expo</h4>
+                <p>Exhibitor, 2023</p>
+                <a href="expo.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+            </div>
+            <div class="train-card">
+                <h4>World Social Forum</h4>
+                <p>Participant, 2024</p>
+                <a href="World Social Forum.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
             </div>
         </div>
     </section>
 
     <!-- SKILLS SECTION -->
-    <section id="skills" class="content-section">
-        <div class="card">
-            <h2>Technical Skills</h2>
-            <div class="grid">
-                <div class="skill-box">
-                    <h3>Software</h3>
-                    <span class="tag">Arc-GIS</span> <span class="tag">RStudio</span> 
-                    <span class="tag">SPSS</span> <span class="tag">GenStat</span>
-                    <a href="computer.jpg" target="_blank" class="btn btn-outline" style="width:100%; justify-content:center;">View Certificate</a>
-                </div>
-                <div class="skill-box">
-                    <h3>AI & Python</h3>
-                    <span class="tag">YOLO Models</span> <span class="tag">Computer Vision</span>
-                    <span class="tag">Image Segmentation</span>
-                </div>
+    <section id="skills" class="section-content">
+        <h2>Skills & Web Applications</h2>
+        <div class="grid">
+            <div class="skill-card">
+                <h3><i class="fas fa-desktop"></i> Software</h3>
+                <span class="tag">Microsoft Office</span> <span class="tag">Arc-GIS</span> 
+                <span class="tag">RStudio</span> <span class="tag">GenStat</span> <span class="tag">SPSS</span>
+                <a href="computer.jpg" target="_blank" class="cert-btn" style="display:block; margin-top:15px;"><i class="fas fa-certificate"></i> View Certificate</a>
             </div>
+            <div class="skill-card">
+                <h3><i class="fab fa-python"></i> Python AI</h3>
+                <span class="tag">Image detection</span> <span class="tag">Classification</span>
+                <span class="tag">Segmentation</span> <span class="tag">Deep Learning</span>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-users"></i> Leadership</h3>
+                <span class="tag">Public speaking</span> <span class="tag">Mass handling</span> <span class="tag">Management</span>
+            </div>
+        </div>
 
-            <div class="app-card">
-                <h3>🍅 Tomato Research App</h3>
-                <p>AI-powered monitoring system for <i>Solanum lycopersicum</i> health and yield estimation using deep learning.</p>
-                <a href="https://abcp5qmcktvhgfjcpig2np.streamlit.app/" target="_blank" class="btn" style="background:white; color:var(--primary);">Launch Web App</a>
-            </div>
+        <!-- Tomato App -->
+        <div class="research-box">
+            <h3>🍅 Tomato Research (AI Monitoring)</h3>
+            <p>Developing an AI-powered smart monitoring system for tomato crop growth, yield estimation, and disease detection using computer vision. Integrating <strong>YOLO-based models</strong> for real field conditions.</p>
+            <ul>
+                <li>Automated tomato fruit detection and counting.</li>
+                <li>Classification red, turning, and green stages for maturity.</li>
+                <li>Leaf disease detection (Early/Late blight, Bacterial spot, etc.)</li>
+                <li>Yield estimation using image-based weight approximation.</li>
+            </ul>
+            <a href="https://abcp5qmcktvhgfjcpig2np.streamlit.app/" target="_blank" class="cert-btn project-btn"><i class="fas fa-rocket"></i> Launch Tomato App</a>
+        </div>
 
-            <div class="app-card">
-                <h3>🐝 Bee Monitoring App</h3>
-                <p>Automated identification and tracking system for major bee species like <i>Apis laboriosa</i> and <i>Apis cerana</i>.</p>
-                <a href="https://beeenemy.streamlit.app/" target="_blank" class="btn" style="background:white; color:var(--primary);">Launch Web App</a>
-            </div>
+        <!-- Bee App -->
+        <div class="research-box">
+            <h3>🐝 Bee Research (Hive Health)</h3>
+            <p>AI-based hive health and pollinator monitoring system tracking species like <i>Apis laboriosa</i>, <i>Apis cerana</i>, and <i>Apis mellifera</i>.</p>
+            <ul>
+                <li>Species identification of major honeybee species found in Nepal.</li>
+                <li>Pollinator activity monitoring and biodiversity assessment.</li>
+            </ul>
+            <a href="https://beeenemy.streamlit.app/" target="_blank" class="cert-btn project-btn"><i class="fas fa-rocket"></i> Launch Bee App</a>
         </div>
     </section>
 
     <!-- REFERENCES SECTION -->
-    <section id="refs" class="content-section">
-        <div class="card">
-            <h2>References</h2>
-            <div class="ref-grid">
-                <div class="ref-card">
-                    <h4>Dr. Arjun Kumar Shrestha</h4>
-                    <p>Professor, Dept. of Horticulture</p>
-                    <p>AFU, Nepal</p>
-                    <p><strong>akshrestha@afu.edu.np</strong></p>
-                </div>
-                <div class="ref-card">
-                    <h4>Saroj Adhikari</h4>
-                    <p>Senior Scientist</p>
-                    <p>NARC, Nepal</p>
-                    <p><strong>Sarojadhikari977@gmail.com</strong></p>
-                </div>
-                <div class="ref-card">
-                    <h4>Samuel Revolinski</h4>
-                    <p>Asst. Professor, Plant & Soil Science</p>
-                    <p>University of Kentucky, USA</p>
-                    <p><strong>sr.revolinski@uky.edu</strong></p>
-                </div>
+    <section id="refs" class="section-content">
+        <h2>Professional References</h2>
+        <div class="ref-grid">
+            <div class="ref-card">
+                <h4>Dr. Arjun Kumar Shrestha</h4>
+                <p>Professor, Dept. of Horticulture</p>
+                <p>Agriculture and Forestry University, Nepal</p>
+                <p><strong>akshrestha@afu.edu.np</strong></p>
+            </div>
+            <div class="ref-card">
+                <h4>Saroj Adhikari</h4>
+                <p>Senior Scientist</p>
+                <p>Nepal Agriculture Research Council, Nepal</p>
+                <p><strong>Sarojadhikari977@gmail.com</strong></p>
+            </div>
+            <div class="ref-card">
+                <h4>Samuel Revolinski</h4>
+                <p>Asst. Professor, Plant & Soil Science</p>
+                <p>University of Kentucky, USA</p>
+                <p><strong>sr.revolinski@uky.edu</strong></p>
             </div>
         </div>
     </section>
 
-</main>
+</div>
+
+<footer>
+    <p>&copy; 2024 Sandesh Subedi | Built with GitHub Pages</p>
+</footer>
 
 <script>
-    function showSection(id, element) {
-        // Hide all sections
-        document.querySelectorAll('.content-section').forEach(section => {
-            section.classList.remove('active');
-        });
-        
-        // Show selected section
+    function openTab(id, element) {
+        // Hide all
+        document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+        // Show selected
         document.getElementById(id).classList.add('active');
-
-        // Update nav links
-        document.querySelectorAll('nav a').forEach(link => {
-            link.classList.remove('active');
-        });
+        // Nav highlight
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
         element.classList.add('active');
-
-        // Scroll to top of content
-        window.scrollTo({ top: 300, behavior: 'smooth' });
+        // Scroll to content
+        window.scrollTo({ top: 350, behavior: 'smooth' });
     }
 </script>
 
