@@ -3,340 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sandesh Subedi | Agriculture & AI Researcher</title>
+    <title>Sandesh Subedi | Agriculture & AI Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2d5a27; /* Deep Ag Green */
+            --primary: #2d5a27; 
             --secondary: #4f772d;
             --accent: #90a955;
-            --bg-light: #f4f7f4;
+            --bg-light: #f8faf8;
             --text-dark: #1b3022;
         }
 
-        * { box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.6; color: var(--text-dark); margin: 0; background-color: var(--bg-light); }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--text-dark); margin: 0; background-color: var(--bg-light); }
 
-        /* Navigation */
         nav { background: white; padding: 15px 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center; }
-        nav a { color: var(--primary); text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
-        nav a:hover { color: var(--accent); }
+        nav a { color: var(--primary); text-decoration: none; margin: 0 12px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; }
 
-        /* Hero Section */
         header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 60px 20px; text-align: center; }
-        .profile-container { margin-bottom: 20px; }
-        .profile-img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.3); object-fit: cover; }
+        .profile-img { width: 160px; height: 160px; border-radius: 50%; border: 4px solid rgba(255,255,255,0.2); object-fit: cover; margin-bottom: 15px; }
         header h1 { margin: 10px 0; font-size: 2.5rem; }
-        header p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
-        .contact-bar { margin-top: 25px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .contact-bar span, .contact-bar a { color: white; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+        .contact-bar { margin-top: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: 0.9rem; }
+        .contact-bar a { color: white; text-decoration: none; }
 
-        /* Main Content */
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; margin-top: 0; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; text-transform: uppercase; font-size: 1.4rem; margin-bottom: 25px; }
 
-        /* Objective */
-        .objective-text { font-size: 1.1rem; color: #444; border-left: 3px solid #eee; padding-left: 20px; font-style: italic; }
+        /* Experience & Timeline */
+        .item { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #f0f4f0; }
+        .item:last-child { border: none; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .item-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); }
+        .item-date { font-weight: 700; color: var(--secondary); font-size: 0.85rem; }
+        .item-org { font-weight: 600; color: #666; display: block; margin: 5px 0; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 6px; font-size: 0.95rem; }
 
-        /* Education & Experience Items */
-        .timeline-item { margin-bottom: 30px; position: relative; padding-left: 20px; border-left: 2px solid #eee; }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 5px; }
-        .item-title { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
-        .item-org { font-weight: 600; color: #555; display: block; margin-bottom: 5px; }
-        .item-date { background: var(--bg-light); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; color: var(--secondary); }
-        .item-content { margin-top: 10px; font-size: 0.95rem; }
-        .item-content ul { padding-left: 20px; margin-top: 8px; }
-        .item-content li { margin-bottom: 5px; }
+        /* Photo & Content Side-by-Side Section */
+        .media-row { display: flex; gap: 30px; align-items: center; margin-bottom: 40px; flex-wrap: wrap; }
+        .media-text { flex: 1; min-width: 300px; }
+        .media-img { flex: 1; min-width: 300px; }
+        .media-img img { width: 100%; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        /* Skills Grid */
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .skill-card { background: var(--bg-light); padding: 20px; border-radius: 10px; }
-        .skill-card h3 { margin-top: 0; font-size: 1rem; color: var(--primary); display: flex; align-items: center; gap: 10px; }
-        .skill-tag { display: inline-block; background: white; padding: 4px 10px; margin: 4px; border-radius: 5px; font-size: 0.85rem; border: 1px solid #ddd; }
-
-        /* Publications */
-        .pub-item { background: #fff; border: 1px solid #eee; padding: 20px; border-radius: 10px; margin-bottom: 15px; transition: 0.3s; }
-        .pub-item:hover { border-color: var(--accent); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .pub-link { color: var(--secondary); text-decoration: none; font-weight: 600; display: inline-block; margin-top: 10px; font-size: 0.9rem; }
-
-        /* Gallery */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .gallery-item { position: relative; overflow: hidden; border-radius: 10px; height: 200px; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .gallery-item:hover img { transform: scale(1.1); }
-        .gallery-caption { position: absolute; bottom: 0; width: 100%; background: rgba(0,0,0,0.7); color: white; padding: 10px; font-size: 0.8rem; }
-
-        /* Footer */
         footer { background: var(--text-dark); color: white; padding: 60px 20px; text-align: center; }
-        .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-bottom: 40px; text-align: left; max-width: 900px; margin: 0 auto 40px auto; }
-        .ref-card h4 { margin: 0 0 5px 0; color: var(--accent); }
-        .ref-card p { margin: 2px 0; font-size: 0.85rem; opacity: 0.8; }
-
+        .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: left; max-width: 900px; margin: 20px auto; }
+        
         @media (max-width: 768px) {
             .item-header { flex-direction: column; }
-            .item-date { margin-top: 5px; }
-            section { padding: 25px; }
+            .media-row { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#about">About</a>
+    <a href="#about">About Me</a>
     <a href="#education">Education</a>
-    <a href="#publications">Research</a>
     <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
+    <a href="#research">Publications</a>
     <a href="#gallery">Gallery</a>
 </nav>
 
 <header>
-    <div class="profile-container">
-        <!-- Add your image here later -->
-        <img src="https://via.placeholder.com/150" alt="Sandesh Subedi" class="profile-img">
-    </div>
+    <img src="IMG_3427.jpg" alt="Sandesh Subedi" class="profile-img">
     <h1>SANDESH SUBEDI</h1>
-    <p>B.Sc. Agriculture Graduate | M.Sc. Horticulture Researcher | AI & Computer Vision Enthusiast</p>
+    <p>B.Sc. Agriculture Graduate | M.Sc. Horticulture Scholar</p>
     <div class="contact-bar">
-        <span><i class="fas fa-map-marker-alt"></i> Syangja, Nepal</span>
-        <a href="mailto:Subedisandesh24@gmail.com"><i class="fas fa-envelope"></i> Subedisandesh24@gmail.com</a>
-        <a href="https://linkedin.com/in/sandeshsubedi24" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <span><i class="fas fa-envelope"></i> Subedisandesh24@gmail.com</span>
         <span><i class="fas fa-phone"></i> +977 9866009867</span>
+        <a href="https://linkedin.com/in/sandeshsubedi24" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
     </div>
 </header>
 
 <div class="container">
 
-    <!-- OBJECTIVE -->
+    <!-- ABOUT ME SECTION -->
     <section id="about">
-        <h2>Career Objective</h2>
-        <p class="objective-text">
-            A highly motivated and enthusiastic B.Sc. Agriculture graduate with a strong interest in integration of computer 
-            vision particularly in the fields of Agriculture. My research background includes involvement in projects across 
-            various disciplines such as agronomy, horticulture and integration of AI in agriculture. I am a dedicated team 
-            player with demonstrated interpersonal and leadership abilities.
-        </p>
+        <h2>About Me</h2>
+        <p>I am Sandesh Subedi, son of Rishiram Subedi and Sabitri Devi Subedi, born on 25 April 2001 (2058/01/12 B.S.) in Syangja, Nepal. Growing up in a rural agricultural community, I witnessed the dedication, hard work, and resilience of farmers in my village. Observing how agriculture shaped the livelihood of people around me inspired me to develop a strong interest in farming, agricultural development, and innovative solutions for the agricultural sector.</p>
+        
+        <p>I completed my school-level education at Shishu Niketan Secondary School. I am a graduate of B.Sc. Agriculture from Tribhuvan University and currently pursuing an M.S. in Horticulture at Agriculture and Forestry University.</p>
+        
+        <p>My academic and professional interests focus on agriculture, artificial intelligence (AI), digital agriculture, research, and technology-driven innovation. I am particularly interested in the application of AI, computer vision, machine learning, and image analysis in agriculture, especially in areas such as crop monitoring, disease detection, yield estimation, precision agriculture, and smart farming systems.</p>
+        
+        <p>My research and professional experiences include work in agricultural research, image-based data analysis, computer vision applications, tomato crop studies, digital agriculture, and AI-driven agricultural tools. I am passionate about integrating modern technologies with agricultural science to address practical challenges faced by farmers and agricultural communities.</p>
+        
+        <p>I aspire to contribute to the advancement of AI-powered agriculture, horticultural innovation, and sustainable agricultural development, helping bridge the gap between traditional farming practices and emerging digital technologies in Nepal and beyond.</p>
     </section>
 
-    <!-- EDUCATION -->
+    <!-- EDUCATION SECTION -->
     <section id="education">
         <h2>Education</h2>
-        
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">M.Sc. in Agriculture (Horticulture)</span>
-                <span class="item-date">2025 - Present</span>
-            </div>
-            <span class="item-org">Agriculture and Forestry University (AFU), Chitwan</span>
-            <div class="item-content">
-                <p><strong>Thesis:</strong> A Comparative Study of AI and Manual Data Collection for Assessing Tomato (Solanum lycopersicum L.) Yield and Quality in Response to Mulching and Fertilizer Treatments at Kaski District.</p>
-            </div>
+        <div class="item">
+            <div class="item-header"><span class="item-title">M.Sc. Agriculture (Horticulture)</span><span class="item-date">2025 - Present</span></div>
+            <span class="item-org">Agriculture and Forestry University, Chitwan</span>
         </div>
-
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">B.Sc. in Agriculture</span>
-                <span class="item-date">2019 - 2023</span>
-            </div>
+        <div class="item">
+            <div class="item-header"><span class="item-title">B.Sc. Agriculture</span><span class="item-date">2019 - 2023</span></div>
             <span class="item-org">Tribhuvan University, IAAS Lamjung Campus</span>
-            <div class="item-content">
-                <p>Percentage: 78.3% | Merit Scholarship</p>
-                <ul>
-                    <li>Thesis: "Effect of Mulching Materials on Growth and Yield of Brinjal"</li>
-                    <li>Best Presentator - Soil Science & Horticulture Department Defence</li>
-                </ul>
-            </div>
         </div>
-
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">Higher Secondary School (+2 Science)</span>
-                <span class="item-date">2016 - 2018</span>
-            </div>
-            <span class="item-org">Prativa Secondary School, Kaski</span>
-            <div class="item-content">
-                <p>GPA: 3.26/4.0 | Biology with Extra Mathematics</p>
-            </div>
+        <div class="item">
+            <div class="item-header"><span class="item-title">School Level Education</span></div>
+            <span class="item-org">Shishu Niketan Secondary School</span>
         </div>
     </section>
 
-    <!-- PUBLICATIONS -->
-    <section id="publications">
-        <h2>Research Publications</h2>
-        
-        <div class="pub-item">
-            <strong>Subedi, S.</strong>, & Adhikari, S. (2024). Effects of mulching materials on growth and yield of brinjal. <i>Agriculture Development Journal</i>, 17(1), 135–143.
-            <br><a href="https://doi.org/10.3126/adj.v17i1.67882" class="pub-link" target="_blank">Read Journal Article <i class="fas fa-external-link-alt"></i></a>
-        </div>
-
-        <div class="pub-item">
-            Jaiswal, M., Kharel, R., & <strong>Subedi, S.</strong> (2024). Response of spring rice varieties on different nitrogen management practices in Kapilvastu, Nepal. <i>Agronomy Journal of Nepal</i>, 8(1).
-            <br><a href="https://doi.org/10.3126/ajn.v8i1.70853" class="pub-link" target="_blank">Read Journal Article <i class="fas fa-external-link-alt"></i></a>
-        </div>
-
-        <div class="pub-item">
-            Malla, A. B., <strong>Subedi, S.</strong>, et al. (2024). Ecological Status, Threats, and Habitat Characteristics of Panchaule (Dactylorhiza hatagirea) in Mustang District. <i>Journal of Agriculture and Environment</i>.
-        </div>
-
-        <div class="pub-item">
-            Dahal, S., <strong>Subedi, S.</strong>, & Paudel, N. (2021). A review on Diploknema butyracea (Chiuri) for production, uses, and strategy of management concerning Chepang communities. <i>Journal of Multidisciplinary Sciences</i>.
-        </div>
-
-        <div class="pub-item">
-            <strong>Subedi, S.</strong> (2024). Algal diversity in Nepal and its applications: Current insights and future prospects. <i>Science Heritage Journal</i>.
-        </div>
-    </section>
-
-    <!-- EXPERIENCE -->
+    <!-- EXPERIENCE SECTION -->
     <section id="experience">
-        <h2>Work Experience</h2>
+        <h2>Experience</h2>
 
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">Province Assistant</span>
-                <span class="item-date">March - May 2024</span>
-            </div>
+        <!-- Stromme Foundation -->
+        <div class="item">
+            <div class="item-header"><span class="item-title">Trainer</span><span class="item-date">Nov - Jan</span></div>
+            <span class="item-org">Stromme Foundation, Chitwan</span>
+            <ul>
+                <li>Program organized by Stromme Foundation and technical support given by Kantipur Bhauprabidhik Shikshyalaya.</li>
+                <li>Teach with strong focus on practical, hands-on agricultural education.</li>
+                <li>Deliver practical and theoretical training on key areas: Introductory agriculture, social mobilization, nursery & soil management, fertilizer & pesticide use, horticulture, agronomical crops, post-harvest handling, seed production, mushroom cultivation, apiculture, pisciculture, sericulture, duck farming, agricultural marketing, communication, and entrepreneurship development.</li>
+            </ul>
+        </div>
+
+        <!-- Daayitwa -->
+        <div class="item">
+            <div class="item-header"><span class="item-title">Province Assistant</span><span class="item-date">March - May 2024</span></div>
             <span class="item-org">Daayitwa NGO, Kaski</span>
-            <div class="item-content">
-                <ul>
-                    <li>Accelerated growth-oriented rural enterprises by supporting capacity-building for local entrepreneurs.</li>
-                    <li>Supported GEEP across five rural municipalities: Jaljala, Hupsekot, Badigad, Siranchok, Myagde.</li>
-                    <li>Collaborated with provincial and local governments on inclusive employment and policy outreach.</li>
-                </ul>
-            </div>
+            <ul>
+                <li>Contributed to accelerating growth-oriented rural enterprises by supporting capacity-building initiatives for local entrepreneurs.</li>
+                <li>Supported the implementation of GEEP across five rural municipalities in Gandaki Province (Jaljala, Hupsekot, Badigad, Siranchok, Myagde), facilitating grassroots engagement and coordination.</li>
+                <li>Collaborated with provincial and local governments to promote inclusive employment strategies and local economic development.</li>
+                <li>Assisted in stakeholder coordination and policy outreach, engaging local leaders, entrepreneurs, and diverse networks for governance innovation.</li>
+                <li>Contributed to GEEP’s objective of building state capability for effective policy implementation through field-level and program monitoring.</li>
+            </ul>
         </div>
 
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">Agriculture Instructor</span>
-                <span class="item-date">Jan 2024 - Dec 2024</span>
-            </div>
-            <span class="item-org">Shree Mahendra Secondary School, Kaski</span>
-            <div class="item-content">
-                <ul>
-                    <li>Delivered curriculum for Grade 9-10 on fruit and vegetable cultivation.</li>
-                    <li>Supervised "Learn & Earn Program" involving crop production, post-harvest handling, and marketing.</li>
-                    <li>Acted as focal point for the <strong>JICA Partnership Program</strong>, ensuring project alignment.</li>
-                </ul>
-            </div>
+        <!-- Shree Mahendra -->
+        <div class="item">
+            <div class="item-header"><span class="item-title">Agriculture Instructor</span><span class="item-date">Jan 2024 - Dec 2024</span></div>
+            <span class="item-org">Shree Mahendra Secondary School, Bhalam, Kaski</span>
+            <ul>
+                <li>Delivered theoretical education on fruit and vegetable cultivation to grade 9 and 10 students using interactive teaching methods, ensuring alignment with the Curriculum Development Center’s syllabus.</li>
+                <li>Provided practical training by guiding students through all stages of crop production, including nursery preparation, seed sowing, irrigation, transplanting, intercultural operations, pest identification and control, harvesting, and marketing.</li>
+                <li>Supervised the Learn & Earn Program for grades 9-12, integrating value chain concepts through crop production, post-harvest handling, market sales, and fair profit distribution.</li>
+                <li>Served as the focal point between the JICA Partnership Program and Mahendra Secondary School, coordinating agricultural activities, ensuring project implementation, and aligning initiatives with the program’s logical framework.</li>
+            </ul>
         </div>
 
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">Research Assistant</span>
-                <span class="item-date">June 2022 - Dec 2022</span>
-            </div>
+        <!-- NARC -->
+        <div class="item">
+            <div class="item-header"><span class="item-title">Research Assistant</span><span class="item-date">June 2022 - Dec 2022</span></div>
             <span class="item-org">Horticulture Research Station, NARC Malepatan</span>
-            <div class="item-content">
-                <ul>
-                    <li>Research on varietal improvement: brinjal, chilli, tomato, papaya, dragon fruit, and ornamental plants.</li>
-                    <li>Led field data collection and supervised JTA trainees.</li>
-                    <li>Managed disease/pest control and soil fertility for research plots.</li>
-                </ul>
-            </div>
+            <ul>
+                <li>Conducted research on varietal improvement of vegetable crops (e.g., brinjal, chilli, tomato, yam, radish, potato, beans, capsicum, cauliflower), fruit crops (e.g., papaya, dragon fruit, cucumber), and ornamental plants (e.g., gladiolus), while managing disease and pest control, soil fertility, and overall crop health.</li>
+                <li>Ensured appropriate field site selection for trials and provided technical inputs for optimized crop production.</li>
+                <li>Provided leadership and training to JTA, guiding them in field data collection, site supervision, and research implementation.</li>
+                <li>Developed and executed action plans, monitored progress, and ensured effective implementation of research activities.</li>
+                <li>Conducted data recording, analysis, and interpretation, preparing reports and delivering weekly progress updates to the supervising officer.</li>
+            </ul>
         </div>
 
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">Census Enumerator</span>
-                <span class="item-date">April 2022 - June 2022</span>
-            </div>
-            <span class="item-org">District Statistics Office, Syangja</span>
-            <div class="item-content">
-                <ul>
-                    <li>National Census of Agriculture 2021/22: Data collection on farm size, livestock, and land use.</li>
-                    <li>Led field operations and Focus Group Discussions (FGDs) with local stakeholders.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- VOLUNTEERING -->
-    <section id="volunteering">
-        <h2>Volunteering & Leadership</h2>
-        
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">Team Member (Gandaki Province)</span>
-                <span class="item-date">2024 - Present</span>
-            </div>
-            <span class="item-org">World Food Forum, Chapter Nepal (FAO)</span>
-            <p>Mobilizing youth participation in food systems discussions and local food security initiatives.</p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">Guest Trainer</span>
-                <span class="item-date">April 2024</span>
-            </div>
-            <span class="item-org">Harihar Women Savings and Loan Cooperatives</span>
-            <p>Conducted 7-day training on off-season vegetable cultivation and pest management for farmers in Rayalechour.</p>
-        </div>
-
-        <div class="timeline-item">
-            <div class="item-header">
-                <span class="item-title">Fellow</span>
-                <span class="item-date">March - Sep 2024</span>
-            </div>
-            <span class="item-org">Awareness 360 Fellowship</span>
-            <p>Completed 17 programs on project management. Led a social project selling coriander and papaya seedlings.</p>
+        <!-- Statistics Office -->
+        <div class="item">
+            <div class="item-header"><span class="item-title">Census Enumerator</span><span class="item-date">April 2022 - June 2022</span></div>
+            <span class="item-org">District Statistics Office, Government of Nepal, Syangja</span>
+            <ul>
+                <li>Collected agricultural census data for the National Census of Agriculture 2021/22, conducting household and farm surveys in Syangja to assess farm size, crop production, livestock, and land use patterns.</li>
+                <li>Led field operations, ensuring quality control and timely data collection through door-to-door visits, focusing on inclusive participation of male, female, and Dalit households.</li>
+                <li>Collaborated in teamwork, guiding enumerators and ensuring accurate data through FGDs (Focus Group Discussions) and KIIs (Key Informant Interviews).</li>
+                <li>Planned and organized fieldwork, aligning with the project goals and ensuring effective coordination among enumerators.</li>
+                <li>Conducted interviews with relevant stakeholders to gather essential information for research purposes, as directed by the office.</li>
+            </ul>
         </div>
     </section>
 
-    <!-- SKILLS -->
-    <section id="skills">
-        <h2>Technical & Soft Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3><i class="fab fa-python"></i> AI & Programming</h3>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Image Detection</span>
-                <span class="skill-tag">Image Segmentation</span>
-                <span class="skill-tag">Computer Vision</span>
-            </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-chart-line"></i> Data Analytics</h3>
-                <span class="skill-tag">R Studio</span>
-                <span class="skill-tag">GenStat</span>
-                <span class="skill-tag">SPSS</span>
-                <span class="skill-tag">Arc-GIS</span>
-                <span class="skill-tag">MS Office</span>
-            </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-seedling"></i> Agriculture</h3>
-                <span class="skill-tag">IPM</span>
-                <span class="skill-tag">Nursery Prep</span>
-                <span class="skill-tag">Biochar</span>
-                <span class="skill-tag">Vermicompost</span>
-                <span class="skill-tag">Horticulture Trials</span>
-            </div>
-            <div class="skill-card">
-                <h3><i class="fas fa-comments"></i> Leadership</h3>
-                <span class="skill-tag">Public Speaking</span>
-                <span class="skill-tag">Mass Handling</span>
-                <span class="skill-tag">Project Management</span>
-                <span class="skill-tag">Training of Trainers</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALLERY -->
+    <!-- PICTURES & MEDIA SECTION -->
     <section id="gallery">
-        <h2>Field & Research Gallery</h2>
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?q=80&w=500" alt="Tomato Trial">
-                <div class="gallery-caption">Tomato Yield Assessment Research</div>
+        <h2>Field Highlights & Media</h2>
+        
+        <div class="media-row">
+            <div class="media-text">
+                <h3>Teaching & Training</h3>
+                <p>I have led several practical sessions for secondary students and local farmers, focusing on nursery management and off-season vegetable cultivation. These photos capture the hands-on learning environment during the Learn & Earn program.</p>
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=500" alt="Agri School">
-                <div class="gallery-caption">Teaching Students at Mahendra Secondary</div>
+            <div class="media-img">
+                <img src="training_photo.jpg" alt="Training Session"> <!-- Replace with your file name -->
             </div>
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1595841696677-6489ff3f8cd1?q=80&w=500" alt="NARC Research">
-                <div class="gallery-caption">Field Research at NARC Malepatan</div>
+        </div>
+
+        <div class="media-row">
+            <div class="media-img">
+                <img src="research_photo.jpg" alt="Research Field"> <!-- Replace with your file name -->
+            </div>
+            <div class="media-text">
+                <h3>Research & AI Integration</h3>
+                <p>My work at NARC and my current MS thesis involves intensive field data collection. I am using these observations to build and test computer vision models for automated crop monitoring.</p>
             </div>
         </div>
     </section>
@@ -345,31 +205,25 @@
 
 <footer>
     <div class="container">
-        <h2>Professional References</h2>
+        <h2>References</h2>
         <div class="ref-grid">
-            <div class="ref-card">
-                <h4>Dr. Arjun Kumar Shrestha</h4>
-                <p>Professor & Dean</p>
-                <p>Agriculture & Forestry University</p>
-                <p>Email: akshrestha@afu.edu.np</p>
+            <div>
+                <strong>Dr. Arjun Kumar Shrestha</strong><br>
+                Dean, AFU Nepal<br>
+                akshrestha@afu.edu.np
             </div>
-            <div class="ref-card">
-                <h4>Saroj Adhikari</h4>
-                <p>Senior Technical Officer</p>
-                <p>Horticulture Research Station, NARC</p>
-                <p>Email: Sarojadhikari977@gmail.com</p>
+            <div>
+                <strong>Saroj Adhikari</strong><br>
+                Technical Officer, NARC<br>
+                Sarojadhikari977@gmail.com
             </div>
-            <div class="ref-card">
-                <h4>Samuel Revolinski</h4>
-                <p>Assistant Professor</p>
-                <p>University of Kentucky, USA</p>
-                <p>Email: sr.revolinski@uky.edu</p>
+            <div>
+                <strong>Samuel Revolinski</strong><br>
+                Asst. Professor, Univ. of Kentucky<br>
+                sr.revolinski@uky.edu
             </div>
         </div>
-        <hr style="opacity: 0.1;">
-        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.6;">
-            &copy; 2024 Sandesh Subedi | Built with GitHub Pages
-        </p>
+        <p style="margin-top: 50px; opacity: 0.6; font-size: 0.8rem;">&copy; 2024 Sandesh Subedi | Syangja, Nepal</p>
     </div>
 </footer>
 
