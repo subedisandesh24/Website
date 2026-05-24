@@ -58,8 +58,23 @@
         }
         .cert-btn:hover { background: var(--primary); color: white; }
 
+        .project-btn {
+            background: #ff4b4b;
+            color: white;
+            border: none;
+        }
+        .project-btn:hover { background: #d63f3f; color: white; }
+
         .pub-item { margin-bottom: 20px; border-left: 3px solid #eee; padding-left: 15px; }
         .pub-text { font-size: 0.95rem; color: #444; margin-bottom: 10px; }
+
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .skill-card { background: #fdfdfd; border: 1px solid #eee; padding: 20px; border-radius: 10px; }
+        .skill-card h3 { color: var(--primary); margin-top: 0; font-size: 1.1rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .tag { display: inline-block; background: #eef2ee; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; margin: 4px; color: var(--primary); }
+
+        .research-box { background: #fff; border: 1px solid var(--accent); padding: 25px; border-radius: 12px; margin-bottom: 25px; }
+        .research-box h3 { color: var(--secondary); margin-top: 0; display: flex; align-items: center; gap: 10px; }
 
         .training-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .train-card { background: #fdfdfd; border: 1px solid #eee; padding: 20px; border-radius: 10px; text-align: center; }
@@ -77,11 +92,12 @@
 <body>
 
 <nav>
-    <a href="#about">About Me</a>
+    <a href="#about">About</a>
     <a href="#experience">Experience</a>
     <a href="#education">Education</a>
     <a href="#publications">Publications</a>
     <a href="#training">Training</a>
+    <a href="#skills">Skills</a>
 </nav>
 
 <header>
@@ -120,7 +136,7 @@
             <ul>
                 <li>Program organized by Stromme Foundation and technical support given by Kantipur Bhauprabidhik Shikshyalaya.</li>
                 <li>Teach with strong focus on practical, hands-on agricultural education.</li>
-                <li>Key areas: Nursery management, horticulture, fertilizer use, mushroom cultivation, apiculture, and entrepreneurship development.</li>
+                <li>Key areas: Nursery management, horticulture, fertilizer use, agronomical crops, mushroom cultivation, apiculture, and entrepreneurship development.</li>
             </ul>
             <a href="Stromme Foundation.jpeg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
@@ -221,11 +237,11 @@
         </div>
 
         <div class="pub-item">
-            <p class="pub-text">Malla, A. B., <strong>Subedi, S.</strong>, G.C., D. B., & Bhandari, J. (2024). Ecological Status, Threats, and Habitat Characteristics of Panchaule (Dactylorhiza hatagirea) in Ghasa of Mustang District. <i>The Journal of Agriculture and Environment</i>, 25, 99–107.</p>
+            <p class="pub-text">Malla, A. B., <strong>Subedi, S.</strong>, G.C., D. B., & Bhandari, J. (2024). Ecological Status, Threats, and Habitat Characteristics of Panchaule (<i>Dactylorhiza hatagirea</i>) in Ghasa of Mustang District. <i>The Journal of Agriculture and Environment</i>, 25, 99–107.</p>
         </div>
 
         <div class="pub-item">
-            <p class="pub-text">Dahal, S., <strong>Subedi, S.</strong>, & Paudel, N. (2021). A review on Diploknema butyracea (Chiuri) for production, uses, and strategy of management concerning Chepang communities in Nepal. <i>Journal of Multidisciplinary Sciences</i>, 3(16), 22–34.</p>
+            <p class="pub-text">Dahal, S., <strong>Subedi, S.</strong>, & Paudel, N. (2021). A review on <i>Diploknema butyracea</i> (Roxb.) H.J. Lam. (Chiuri) for production, uses, and strategy of management concerning Chepang communities in Nepal. <i>Journal of Multidisciplinary Sciences</i>, 3(16), 22–34.</p>
             <a href="https://doi.org/10.33888/jms.2021.316" target="_blank" class="cert-btn"><i class="fas fa-file-alt"></i> Read Publication</a>
         </div>
 
@@ -239,11 +255,6 @@
     <section id="training">
         <h2>Trainings & Workshops</h2>
         <div class="training-grid">
-            <div class="train-card">
-                <h4>Computer Skill</h4>
-                <p>Digital Agriculture & Data Management</p>
-                <a href="computer.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
-            </div>
             <div class="train-card">
                 <h4>IPM Training</h4>
                 <p>Caritas Nepal</p>
@@ -274,6 +285,72 @@
                 <p>Participant, 2024</p>
                 <a href="World Social Forum.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
             </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <h2>Skills</h2>
+        
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3><i class="fas fa-laptop-code"></i> Computer</h3>
+                <span class="tag">Microsoft Office</span>
+                <span class="tag">Arc-GIS</span>
+                <span class="tag">RStudio</span>
+                <span class="tag">GenStat</span>
+                <span class="tag">SPSS</span>
+                <a href="computer.jpg" target="_blank" class="cert-btn"><i class="fas fa-certificate"></i> View Certificate</a>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fab fa-python"></i> Python</h3>
+                <span class="tag">Image detection</span>
+                <span class="tag">Image Classification</span>
+                <span class="tag">Image Segmentation</span>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-language"></i> Language</h3>
+                <span class="tag">Nepali</span>
+                <span class="tag">English</span>
+            </div>
+            <div class="skill-card">
+                <h3><i class="fas fa-users-cog"></i> Others</h3>
+                <span class="tag">Public speaking</span>
+                <span class="tag">Mass handling</span>
+                <span class="tag">Leadership</span>
+            </div>
+        </div>
+
+        <div class="research-box">
+            <h3>🍅 Tomato Research (AI-Based Tomato Monitoring System)</h3>
+            <p>My tomato research focuses on developing an AI-powered smart monitoring system for tomato crop growth, yield estimation, and disease detection using computer vision and deep learning techniques. The system integrates multiple YOLO-based models to analyze tomato plants from images and videos under real field conditions.</p>
+            <ul>
+                <li>Automated tomato fruit detection and counting using deep learning models</li>
+                <li>Classification of tomatoes into red, turning, and green stages for maturity analysis</li>
+                <li>Video-based crop monitoring for continuous field assessment</li>
+                <li>Leaf disease detection and classification (Early blight, Late blight, bacterial spot, etc.)</li>
+                <li>Yield estimation using image-based weight approximation and reference scaling techniques</li>
+            </ul>
+            <a href="https://abcp5qmcktvhgfjcpig2np.streamlit.app/" target="_blank" class="cert-btn project-btn"><i class="fas fa-rocket"></i> Launch Tomato App</a>
+        </div>
+
+        <div class="research-box">
+            <h3>🐝 Bee Research (Hive Health & Pollinator Monitoring System)</h3>
+            <p>My bee research focuses on developing an AI-based hive health and pollinator monitoring system that combines computer vision and deep learning to identify, classify, and track bees and their ecosystem interactions. It supports pollination research through automated detection of species-level identification.</p>
+            <ul>
+                <li>Species identification and classification of major honeybee species found in Nepal:
+                    <ul>
+                        <li><i>Apis laboriosa</i> (Himalayan Giant Honey Bee)</li>
+                        <li><i>Apis dorsata</i> (Giant Honey Bee)</li>
+                        <li><i>Apis cerana</i> (Asian Hive Bee)</li>
+                        <li><i>Apis florea</i> (Little Honey Bee)</li>
+                        <li><i>Apis mellifera</i> (European Honey Bee)</li>
+                    </ul>
+                </li>
+                <li>Knowledge-based species information system for ecological and agricultural details</li>
+                <li>Pollinator monitoring framework for studying distribution and activity patterns</li>
+            </ul>
+            <a href="https://beeenemy.streamlit.app/" target="_blank" class="cert-btn project-btn"><i class="fas fa-rocket"></i> Launch Bee App</a>
         </div>
     </section>
 
