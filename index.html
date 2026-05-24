@@ -19,7 +19,7 @@
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; line-height: 1.8; color: var(--text-dark); background-color: var(--bg-light); overflow-x: hidden; }
 
-        /* Glass Nav */
+        /* Navigation */
         nav {
             position: fixed;
             top: 15px;
@@ -43,9 +43,9 @@
             color: var(--primary);
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             text-transform: uppercase;
-            padding: 10px 15px;
+            padding: 10px 12px;
             border-radius: 30px;
             transition: 0.3s;
         }
@@ -55,16 +55,16 @@
             color: white;
         }
 
-        /* Top Bar */
+        /* Header Bar */
         .top-banner {
             padding: 100px 20px 40px;
             text-align: center;
             background: linear-gradient(135deg, #081c15 0%, #1b4332 100%);
             color: white;
         }
-        .top-banner h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 5px; }
+        .top-banner h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 5px; letter-spacing: -1px; }
 
-        /* Container Handling */
+        /* Container */
         .content-container {
             max-width: 1100px;
             margin: 30px auto 100px;
@@ -87,20 +87,20 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* About Section */
+        /* About Section (Profile photo here ONLY) */
         .about-layout { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
         .profile-side { flex: 1; min-width: 280px; text-align: center; }
         .profile-side img { width: 260px; height: 260px; border-radius: 50%; border: 6px solid var(--accent); object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.1); margin-bottom: 20px; }
         .about-text { flex: 2; min-width: 300px; }
 
-        .contact-list { margin-top: 15px; list-style: none !important; padding: 0 !important; }
+        .contact-list { margin-top: 15px; list-style: none !important; padding: 0 !important; text-align: left; display: inline-block; }
         .contact-list li { margin-bottom: 8px !important; display: flex; align-items: center; gap: 10px; color: var(--primary); font-weight: 600; font-size: 0.9rem !important; }
         .contact-list li i { color: var(--accent); width: 20px; }
         .contact-list li a { color: inherit; text-decoration: none; }
 
         h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 30px; border-left: 6px solid var(--accent); padding-left: 15px; }
 
-        /* Experience Items */
+        /* Experience Styling */
         .item { margin-bottom: 45px; border-bottom: 1px solid #f0f0f0; padding-bottom: 30px; }
         .item:last-child { border: none; }
         .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
@@ -128,34 +128,32 @@
         }
         .btn:hover { background: var(--primary); color: white; }
 
-        /* Reference Styling - Dark Bright */
+        /* References High Contrast */
         .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .ref-card { background: #fff; padding: 30px; border: 1px solid #eee; border-radius: 20px; }
         .ref-name { color: #000; font-size: 1.4rem; font-weight: 900; display: block; margin-bottom: 10px; letter-spacing: -0.5px; }
         .ref-info { font-size: 0.95rem; color: #333; line-height: 1.4; margin-bottom: 4px; }
 
-        /* Web Applications Boxes */
+        /* Web Apps Styling */
         .app-box { background: #081c15; color: white; padding: 40px; border-radius: 25px; margin-bottom: 30px; border-left: 8px solid var(--accent); }
-        .app-box h3 { color: var(--accent); margin-bottom: 15px; font-size: 1.5rem; }
+        .app-box h3 { color: var(--accent); margin-bottom: 20px; font-size: 1.5rem; }
+        .app-box p { opacity: 0.9; margin-bottom: 15px; font-size: 0.95rem; }
         .launch-btn { background: var(--accent); color: var(--primary); border: none; font-weight: 800; }
         .launch-btn:hover { background: white; color: var(--primary); }
 
-        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .skill-card { background: #f9fbf9; padding: 25px; border-radius: 20px; border: 1px solid #eee; }
-        .tag { display: inline-block; background: white; color: var(--primary); padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; margin: 4px; border: 1px solid #ddd; }
+        .tag { display: inline-block; background: #e9f5ee; color: var(--primary); padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; margin: 4px; border: 1px solid #ddd; }
 
         @media (max-width: 768px) {
             nav { bottom: 15px; top: auto; overflow-x: auto; justify-content: flex-start; }
             .section-box { padding: 30px 20px; }
-            .about-layout { flex-direction: column; text-align: center; }
-            .item-header { flex-direction: column; }
+            .about-layout { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
 <nav id="nav">
-    <a href="javascript:void(0)" onclick="openTab('about', this)" class="active">About Me</a>
+    <a href="javascript:void(0)" onclick="openTab('about', this)" class="active">About</a>
     <a href="javascript:void(0)" onclick="openTab('experience', this)">Experience</a>
     <a href="javascript:void(0)" onclick="openTab('education', this)">Education</a>
     <a href="javascript:void(0)" onclick="openTab('publications', this)">Publications</a>
@@ -167,12 +165,12 @@
 
 <div class="top-banner">
     <h1>SANDESH SUBEDI</h1>
-    <p>M.Sc. Horticulture Scholar | AI & Digital Agriculture Researcher</p>
+    <p>M.Sc. Horticulture | AI & Digital Agriculture Researcher</p>
 </div>
 
 <div class="content-container">
 
-    <!-- ABOUT SECTION -->
+    <!-- ABOUT ME -->
     <section id="about" class="section-box active">
         <div class="about-layout">
             <div class="profile-side">
@@ -201,12 +199,12 @@
         <div class="item">
             <div class="item-header">
                 <h3 class="item-title">Trainer</h3>
-                <span class="item-date">Nov - Jan</span>
+                <span class="item-date">Nov, 2025 - Jan, 2026</span>
             </div>
             <span class="item-org">Stromme Foundation, Chitwan</span>
             <ul>
                 <li>Program organized by <strong>Stromme Foundation</strong> and technical support given by <strong>Kantipur Bhauprabidhik Shikshyalaya</strong>.</li>
-                <li>Teach with strong focus on <strong>practical, hands-on agricultural education</strong>.</li>
+                <li>Teach with strong focus on practical, hands-on agricultural education.</li>
                 <li>Deliver practical and theoretical training on key areas: Introductory agriculture, social mobilization, nursery & soil management, fertilizer & pesticide use, horticulture, agronomical crops, post-harvest handling, seed production, mushroom cultivation, apiculture, pisciculture, sericulture, duck farming, agricultural marketing, communication, and entrepreneurship development.</li>
             </ul>
             <a href="Stromme Foundation.jpeg" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
@@ -215,7 +213,7 @@
         <div class="item">
             <div class="item-header">
                 <h3 class="item-title">Province Assistant</h3>
-                <span class="item-date">March - May</span>
+                <span class="item-date">March, 2025 - May, 2025</span>
             </div>
             <span class="item-org">Daayitwa NGO, Kaski</span>
             <ul>
@@ -266,10 +264,9 @@
             <span class="item-org">District Statistics Office, Syangja</span>
             <ul>
                 <li>Collected agricultural census data for the <strong>National Census of Agriculture 2021/22</strong>, conducting household and farm surveys in Syangja to assess farm size, crop production, livestock, and land use patterns.</li>
-                <li>Led field operations, ensuring quality control and timely data collection through door-to-door visits, focusing on inclusive participation.</li>
+                <li>Led field operations, ensuring quality control and timely data collection through door-to-door visits, focusing on inclusive participation of male, female, and Dalit households.</li>
                 <li>Collaborated in teamwork, guiding enumerators and ensuring accurate data through Focus Group Discussions (FGDs) and Key Informant Interviews (KIIs).</li>
                 <li>Planned and organized fieldwork, aligning with the project goals and ensuring effective coordination among enumerators.</li>
-                <li>Conducted interviews with relevant stakeholders to gather essential information for research purposes.</li>
             </ul>
             <a href="Agricensus.jpg" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
@@ -324,7 +321,7 @@
             <a href="https://doi.org/10.3126/ajn.v8i1.70853" target="_blank" class="btn"><i class="fas fa-file-alt"></i> View paper</a>
         </div>
         <div class="item" style="border:none;">
-            <p>Malla, A. B., <strong>Subedi, S.</strong>, G.C., D. B., & Bhandari, J. (2024). Ecological Status, Threats, and Habitat Characteristics of Panchaule (<i>Dactylorhiza hatagirea</i>) in Mustang District. <i>The Journal of Agriculture and Environment</i>, 25, 99–107.</p>
+            <p>Malla, A. B., <strong>Subedi, S.</strong>, G.C., D. B., & Bhandari, J. (2024). Ecological Status, Threats, and Habitat Characteristics of Panchaule (<i>Dactylorhiza hatagirea</i>) in Ghasa of Mustang District. <i>The Journal of Agriculture and Environment</i>, 25, 99–107.</p>
         </div>
         <div class="item" style="border:none;">
             <p>Dahal, S., <strong>Subedi, S.</strong>, & Paudel, N. (2021). A review on <i>Diploknema butyracea</i> (Roxb.) H.J. Lam. (Chiuri) for production, uses, and strategy of management concerning Chepang communities in Nepal. <i>Journal of Multidisciplinary Sciences</i>, 3(16).</p>
@@ -339,7 +336,7 @@
     <!-- TRAINING SECTION -->
     <section id="training" class="section-box">
         <h2>Trainings & Workshops</h2>
-        <div class="skill-grid">
+        <div class="ref-grid">
             <div class="skill-card" style="text-align:center;">
                 <h4>IPM Training</h4>
                 <p>Caritas Nepal</p>
@@ -371,7 +368,7 @@
     <!-- SKILLS SECTION -->
     <section id="skills" class="section-box">
         <h2>Technical Skills</h2>
-        <div class="skill-grid">
+        <div class="ref-grid">
             <div class="skill-card">
                 <h3><i class="fas fa-desktop"></i> Software</h3>
                 <span class="tag">Microsoft Office</span> <span class="tag">Arc-GIS</span> 
@@ -397,15 +394,48 @@
     <!-- WEB APPLICATIONS SECTION -->
     <section id="webapps" class="section-box">
         <h2>Web Applications & AI Research</h2>
+
+        <!-- Tomato Project -->
         <div class="app-box">
-            <h3>🍅 Tomato Research (AI-Based Monitoring System)</h3>
-            <p>My tomato research focuses on developing an AI-powered smart monitoring system for tomato crop growth, yield estimation, and disease detection using computer vision and deep learning techniques. The system integrates multiple <strong>YOLO-based models</strong> to analyze tomato plants from images and videos under real field conditions.</p>
-            <p style="margin-top:10px;">The research includes: Automated tomato fruit detection and counting using deep learning models; Maturity analysis (red, turning, green); Video-based field monitoring; Leaf disease detection (early blight, late blight, bacterial spot, powdery mildew, viral infections); and image-based yield prediction using reference scaling techniques.</p>
+            <h3>🍅 Tomato Research (AI-Based Tomato Monitoring System)</h3>
+            <p>My tomato research focuses on developing an AI-powered smart monitoring system for tomato crop growth, yield estimation, and disease detection using computer vision and deep learning techniques. The system integrates multiple YOLO-based models to analyze tomato plants from images and videos under real field conditions.</p>
+            <p><strong>The research includes:</strong></p>
+            <ul>
+                <li>Automated tomato fruit detection and counting using deep learning models</li>
+                <li>Classification of tomatoes into red, turning, and green stages for maturity analysis</li>
+                <li>Video-based crop monitoring for continuous field assessment</li>
+                <li>Leaf disease detection and classification, including major tomato diseases such as early blight, late blight, bacterial spot, powdery mildew, leaf mold, and viral infections</li>
+                <li>A decision-support system that recommends appropriate plant protection measures based on detected diseases</li>
+                <li>Yield estimation using image-based weight approximation, where fruit size is converted into weight using reference scaling techniques</li>
+            </ul>
+            <p style="margin-top:15px;">This system is designed to reduce manual labor, improve accuracy in field data collection, and support precision agriculture practices for tomato production in Nepal. It also enables real-time monitoring of crop health and productivity, helping farmers and researchers make faster and more informed decisions.</p>
+            <p>Overall, this research bridges agriculture and artificial intelligence by applying computer vision for practical crop monitoring, disease management, and yield prediction.</p>
             <a href="https://abcp5qmcktvhgfjcpig2np.streamlit.app/" target="_blank" class="btn launch-btn"><i class="fas fa-rocket"></i> Launch Tomato App</a>
         </div>
+
+        <!-- Bee Project -->
         <div class="app-box">
-            <h3>🐝 Bee Research (Hive Health & Pollinator Monitoring)</h3>
-            <p>Developing an AI-based hive health and pollinator monitoring system tracking species like <i>Apis laboriosa</i>, <i>Apis dorsata</i>, <i>Apis cerana</i>, <i>Apis florea</i>, and <i>Apis mellifera</i>. Supports automated biodiversity assessment and data-driven pollination management through species-level identification.</p>
+            <h3>🐝 Bee Research (Hive Health & Pollinator Monitoring System)</h3>
+            <p>My bee research focuses on developing an AI-based hive health and pollinator monitoring system that combines computer vision and deep learning to identify, classify, and track bees and their ecosystem interactions in agricultural environments.</p>
+            <p>The system is designed to support pollination research and hive management through automated detection and species-level identification of bees.</p>
+            <p><strong>Key components of the research include:</strong></p>
+            <ul>
+                <li>Bee detection system using YOLO-based object detection models to identify bees in images and field visuals</li>
+                <li>Species identification and classification of major honeybee species found in Nepal, including:
+                    <ul>
+                        <li><i>Apis laboriosa</i> (Himalayan Giant Honey Bee)</li>
+                        <li><i>Apis dorsata</i> (Giant Honey Bee)</li>
+                        <li><i>Apis cerana</i> (Asian Hive Bee)</li>
+                        <li><i>Apis florea</i> (Little Honey Bee)</li>
+                        <li><i>Apis mellifera</i> (European Honey Bee)</li>
+                    </ul>
+                </li>
+                <li>A knowledge-based species information system, providing ecological and agricultural details about each detected bee species</li>
+                <li>Pollinator monitoring framework for studying bee presence, distribution, and activity patterns in agricultural fields</li>
+                <li>Integration of AI tools for supporting bee health monitoring and biodiversity assessment</li>
+            </ul>
+            <p style="margin-top:15px;">This research contributes to understanding the role of pollinators in agriculture and supports data-driven pollination management strategies, particularly in crops like tomato where pollination can influence yield and quality.</p>
+            <p>The system helps bridge entomology, ecology, and artificial intelligence, enabling automated monitoring of pollinator populations and their impact on agricultural productivity.</p>
             <a href="https://beeenemy.streamlit.app/" target="_blank" class="btn launch-btn"><i class="fas fa-rocket"></i> Launch Bee App</a>
         </div>
     </section>
@@ -428,7 +458,7 @@
             </div>
             <div class="ref-card">
                 <span class="ref-name">Samuel Revolinski</span>
-                <p class="ref-info">Asst. Professor, Plant and Soil Science</p>
+                <p class="ref-info">Asst. Professor, Plant and Soil Science Department</p>
                 <p class="ref-info">University of Kentucky, USA</p>
                 <p class="ref-info"><strong>sr.revolinski@uky.edu</strong></p>
             </div>
