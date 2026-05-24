@@ -26,34 +26,49 @@
         .contact-bar { margin-top: 20px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; font-size: 0.9rem; }
         .contact-bar a { color: white; text-decoration: none; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         section { background: white; padding: 40px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
         h2 { color: var(--primary); border-left: 5px solid var(--accent); padding-left: 15px; text-transform: uppercase; font-size: 1.4rem; margin-bottom: 25px; }
 
-        /* Experience Layout with Images */
-        .exp-card { display: flex; gap: 25px; margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 30px; align-items: flex-start; }
-        .exp-content { flex: 3; }
-        .exp-img { flex: 1.2; min-width: 200px; }
-        .exp-img img { width: 100%; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border: 1px solid #ddd; }
-
+        .item { margin-bottom: 40px; border-bottom: 1px solid #f0f4f0; padding-bottom: 25px; }
+        .item:last-child { border: none; }
         .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
-        .item-title { font-size: 1.2rem; font-weight: 700; color: var(--primary); margin: 0; }
+        .item-title { font-size: 1.25rem; font-weight: 700; color: var(--primary); margin: 0; }
         .item-date { font-weight: 700; color: var(--secondary); font-size: 0.85rem; }
-        .item-org { font-weight: 600; color: #666; display: block; margin: 5px 0; }
+        .item-org { font-weight: 600; color: #666; display: block; margin: 5px 0; font-size: 1.1rem; }
         
+        ul { padding-left: 20px; margin-top: 10px; }
+        li { margin-bottom: 8px; font-size: 0.95rem; }
+
+        /* Certificate/Photo Button */
+        .cert-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--accent);
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+        .cert-btn:hover { background: var(--primary); color: white; }
+
         /* Training Grid */
-        .training-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .train-box { background: #fdfdfd; border: 1px solid #f0f0f0; border-radius: 10px; overflow: hidden; }
-        .train-box img { width: 100%; height: 200px; object-fit: cover; }
-        .train-info { padding: 15px; }
-        .train-info h4 { margin: 0; color: var(--primary); }
+        .training-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .train-card { background: #fdfdfd; border: 1px solid #eee; padding: 20px; border-radius: 10px; text-align: center; }
+        .train-card h4 { margin: 0 0 10px 0; color: var(--primary); }
 
         footer { background: var(--text-dark); color: white; padding: 60px 20px; text-align: center; }
         .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: left; max-width: 900px; margin: 20px auto; }
         
         @media (max-width: 768px) {
-            .exp-card { flex-direction: column; }
-            .exp-img { width: 100%; }
+            .item-header { flex-direction: column; }
+            section { padding: 25px; }
         }
     </style>
 </head>
@@ -61,6 +76,7 @@
 
 <nav>
     <a href="#about">About Me</a>
+    <a href="#education">Education</a>
     <a href="#experience">Experience</a>
     <a href="#research">Publications</a>
     <a href="#training">Training</a>
@@ -82,93 +98,91 @@
     <!-- ABOUT ME -->
     <section id="about">
         <h2>About Me</h2>
-        <div class="exp-card" style="border:none; padding:0;">
-            <div class="exp-content">
-                <p>I am Sandesh Subedi, son of Rishiram Subedi and Sabitri Devi Subedi, born on 25 April 2001 (2058/01/12 B.S.) in Syangja, Nepal. Growing up in a rural agricultural community, I witnessed the dedication, hard work, and resilience of farmers in my village. Observing how agriculture shaped the livelihood of people around me inspired me to develop a strong interest in farming, agricultural development, and innovative solutions for the agricultural sector.</p>
-                <p>My academic and professional interests focus on agriculture, artificial intelligence (AI), digital agriculture, and technology-driven innovation. I am particularly interested in the application of <strong>Computer Vision, Machine Learning, and Image Analysis</strong> in areas such as crop monitoring, disease detection, and yield estimation.</p>
-            </div>
-            <div class="exp-img">
-                <img src="computer.jpg" alt="Data and Tech Work">
-            </div>
-        </div>
+        <p>I am Sandesh Subedi, son of Rishiram Subedi and Sabitri Devi Subedi, born on 25 April 2001 (2058/01/12 B.S.) in Syangja, Nepal. Growing up in a rural agricultural community, I witnessed the dedication, hard work, and resilience of farmers in my village. Observing how agriculture shaped the livelihood of people around me inspired me to develop a strong interest in farming, agricultural development, and innovative solutions for the agricultural sector.</p>
+        <p>I completed my school-level education at Shishu Niketan Secondary School. I am a graduate of B.Sc. Agriculture from Tribhuvan University and currently pursuing an M.S. in Horticulture at Agriculture and Forestry University.</p>
+        <p>My academic and professional interests focus on agriculture, artificial intelligence (AI), digital agriculture, research, and technology-driven innovation. I am particularly interested in the application of AI, computer vision, machine learning, and image analysis in agriculture, especially in areas such as crop monitoring, disease detection, yield estimation, precision agriculture, and smart farming systems.</p>
+        <p>My research and professional experiences include work in agricultural research, image-based data analysis, computer vision applications, tomato crop studies, digital agriculture, and AI-driven agricultural tools. I am passionate about integrating modern technologies with agricultural science to address practical challenges faced by farmers and agricultural communities.</p>
+        <p>I aspire to contribute to the advancement of AI-powered agriculture, horticultural innovation, and sustainable agricultural development, helping bridge the gap between traditional farming practices and emerging digital technologies in Nepal and beyond.</p>
+        <a href="computer.jpg" target="_blank" class="cert-btn"><i class="fas fa-image"></i> View Research Setup</a>
     </section>
 
     <!-- EXPERIENCE SECTION -->
     <section id="experience">
-        <h2>Professional Experience</h2>
+        <h2>Experience</h2>
+
+        <!-- Stromme Foundation -->
+        <div class="item">
+            <div class="item-header">
+                <h3 class="item-title">Trainer</h3>
+                <span class="item-date">Nov - Jan</span>
+            </div>
+            <span class="item-org">Stromme Foundation, Chitwan</span>
+            <ul>
+                <li>Program organized by Stromme Foundation and technical support given by Kantipur Bhauprabidhik Shikshyalaya.</li>
+                <li>Teach with strong focus on practical, hands-on agricultural education.</li>
+                <li>Deliver practical and theoretical training on key areas: Introductory agriculture, social mobilization, nursery & soil management, fertilizer & pesticide use, horticulture, agronomical crops, post-harvest handling, seed production, mushroom cultivation, apiculture, pisciculture, sericulture, duck farming, agricultural marketing, communication, and entrepreneurship development.</li>
+            </ul>
+            <a href="Stromme Foundation.jpeg" target="_blank" class="cert-btn"><i class="fas fa-image"></i> View Training Photo</a>
+            <a href="Bee keeping.jpeg" target="_blank" class="cert-btn"><i class="fas fa-image"></i> View Apiculture Training</a>
+        </div>
+
+        <!-- Daayitwa -->
+        <div class="item">
+            <div class="item-header">
+                <h3 class="item-title">Province Assistant</h3>
+                <span class="item-date">March - May 2024</span>
+            </div>
+            <span class="item-org">Daayitwa NGO, Kaski</span>
+            <ul>
+                <li>Contributed to accelerating growth-oriented rural enterprises by supporting capacity-building initiatives for local entrepreneurs.</li>
+                <li>Supported the implementation of GEEP across five rural municipalities in Gandaki Province.</li>
+                <li>Collaborated with provincial and local governments to promote inclusive employment strategies.</li>
+            </ul>
+        </div>
 
         <!-- Shree Mahendra -->
-        <div class="exp-card">
-            <div class="exp-content">
-                <div class="item-header">
-                    <h3 class="item-title">Agriculture Instructor</h3>
-                    <span class="item-date">Jan 2024 - Dec 2024</span>
-                </div>
-                <span class="item-org">Shree Mahendra Secondary School, Bhalam, Kaski</span>
-                <ul>
-                    <li>Delivered theoretical and practical education on fruit and vegetable cultivation to grade 9 and 10.</li>
-                    <li>Supervised the <strong>Learn & Earn Program</strong>, integrating value chain concepts through crop production and market sales.</li>
-                    <li>Served as the focal point between the JICA Partnership Program and the school.</li>
-                </ul>
+        <div class="item">
+            <div class="item-header">
+                <h3 class="item-title">Agriculture Instructor</h3>
+                <span class="item-date">Jan 2024 - Dec 2024</span>
             </div>
-            <div class="exp-img">
-                <img src="Mahendra Ma vi.JPG" alt="Teaching at Mahendra School">
-            </div>
+            <span class="item-org">Shree Mahendra Secondary School, Bhalam, Kaski</span>
+            <ul>
+                <li>Delivered theoretical education on fruit and vegetable cultivation to grade 9 and 10 students.</li>
+                <li>Provided practical training by guiding students through all stages of crop production.</li>
+                <li>Supervised the Learn & Earn Program for grades 9-12.</li>
+                <li>Served as the focal point between the JICA Partnership Program and Mahendra Secondary School.</li>
+            </ul>
+            <a href="Mahendra Ma vi.JPG" target="_blank" class="cert-btn"><i class="fas fa-image"></i> View School Activity</a>
         </div>
 
         <!-- NARC -->
-        <div class="exp-card">
-            <div class="exp-content">
-                <div class="item-header">
-                    <h3 class="item-title">Research Assistant</h3>
-                    <span class="item-date">June 2022 - Dec 2022</span>
-                </div>
-                <span class="item-org">Horticulture Research Station, NARC Malepatan</span>
-                <ul>
-                    <li>Conducted research on varietal improvement of vegetable crops, fruit crops, and ornamental plants.</li>
-                    <li>Managed disease and pest control, soil fertility, and overall crop health for optimized production.</li>
-                    <li>Provided leadership to JTA, guiding them in field data collection and site supervision.</li>
-                </ul>
+        <div class="item">
+            <div class="item-header">
+                <h3 class="item-title">Research Assistant</h3>
+                <span class="item-date">June 2022 - Dec 2022</span>
             </div>
-            <div class="exp-img">
-                <img src="narc intenship.jpg" alt="Research at NARC">
-            </div>
+            <span class="item-org">Horticulture Research Station, NARC Malepatan</span>
+            <ul>
+                <li>Conducted research on varietal improvement of vegetable crops, fruit crops, and ornamental plants.</li>
+                <li>Managed disease and pest control, soil fertility, and overall crop health.</li>
+                <li>Provided leadership and training to JTA in field data collection.</li>
+            </ul>
+            <a href="narc intenship.jpg" target="_blank" class="cert-btn"><i class="fas fa-image"></i> View Research Photo</a>
         </div>
 
-        <!-- Census -->
-        <div class="exp-card">
-            <div class="exp-content">
-                <div class="item-header">
-                    <h3 class="item-title">Census Enumerator</h3>
-                    <span class="item-date">April 2022 - June 2022</span>
-                </div>
-                <span class="item-org">District Statistics Office, Syangja</span>
-                <ul>
-                    <li>Collected agricultural census data for the National Census of Agriculture 2021/22.</li>
-                    <li>Led field operations and door-to-door visits to assess farm size, crop production, and land use.</li>
-                </ul>
+        <!-- Statistics Office -->
+        <div class="item">
+            <div class="item-header">
+                <h3 class="item-title">Census Enumerator</h3>
+                <span class="item-date">April 2022 - June 2022</span>
             </div>
-            <div class="exp-img">
-                <img src="Agricensus.jpg" alt="National Agricultural Census">
-            </div>
-        </div>
-
-        <!-- Harihar (Volunteering/Trainer) -->
-        <div class="exp-card">
-            <div class="exp-content">
-                <div class="item-header">
-                    <h3 class="item-title">Trainer</h3>
-                    <span class="item-date">April 2024</span>
-                </div>
-                <span class="item-org">Harihar Women Savings and Loan Cooperatives</span>
-                <ul>
-                    <li>Conducted a 7-day training program for farmers on off-season vegetable cultivation.</li>
-                    <li>Delivered practical demonstrations on pest management and group formation.</li>
-                </ul>
-            </div>
-            <div class="exp-img">
-                <img src="Harihar training.JPG" alt="Farmer Training Session">
-            </div>
+            <span class="item-org">District Statistics Office, Syangja</span>
+            <ul>
+                <li>Collected agricultural census data for the National Census of Agriculture 2021/22.</li>
+                <li>Led field operations ensuring quality control and timely data collection.</li>
+            </ul>
+            <a href="Agricensus.jpg" target="_blank" class="cert-btn"><i class="fas fa-image"></i> View Field Work</a>
         </div>
     </section>
 
@@ -176,45 +190,35 @@
     <section id="training">
         <h2>Trainings & Workshops</h2>
         <div class="training-grid">
-            <!-- IPM -->
-            <div class="train-box">
-                <img src="Ipm.jpg" alt="IPM Training">
-                <div class="train-info">
-                    <h4>Integrated Pest Management (IPM)</h4>
-                    <p>Caritas Nepal, 2023</p>
-                </div>
+            <div class="train-card">
+                <h4>IPM Training</h4>
+                <p>Caritas Nepal, 2023</p>
+                <a href="Ipm.jpg" target="_blank" class="cert-btn">View Certificate</a>
             </div>
-            <!-- Vermicompost -->
-            <div class="train-box">
-                <img src="Vermicompost Preparation.jpg" alt="Vermicompost Training">
-                <div class="train-info">
-                    <h4>Vermicompost Preparation</h4>
-                    <p>Youth for Sustainable Agriculture, 2022</p>
-                </div>
+            <div class="train-card">
+                <h4>Vermicompost Preparation</h4>
+                <p>Sustainable Agriculture, 2022</p>
+                <a href="Vermicompost Preparation.jpg" target="_blank" class="cert-btn">View Photo</a>
             </div>
-            <!-- Biochar -->
-            <div class="train-box">
-                <img src="Biochar Preparation.jpg" alt="Biochar Training">
-                <div class="train-info">
-                    <h4>Biochar Preparation</h4>
-                    <p>Youth for Sustainable Agriculture, 2022</p>
-                </div>
+            <div class="train-card">
+                <h4>Biochar Preparation</h4>
+                <p>Sustainable Agriculture, 2022</p>
+                <a href="Biochar Preparation.jpg" target="_blank" class="cert-btn">View Photo</a>
             </div>
-            <!-- Expo -->
-            <div class="train-box">
-                <img src="expo.jpg" alt="Agritech Expo">
-                <div class="train-info">
-                    <h4>5th Nepal Agritech Expo</h4>
-                    <p>Exhibitor - Media Space Solutions, 2023</p>
-                </div>
+            <div class="train-card">
+                <h4>Harihar Farmer Training</h4>
+                <p>Pokhara, 2024</p>
+                <a href="Harihar training.JPG" target="_blank" class="cert-btn">View Photo</a>
             </div>
-            <!-- World Social Forum -->
-            <div class="train-box">
-                <img src="World Social Forum.jpg" alt="World Social Forum">
-                <div class="train-info">
-                    <h4>World Social Forum</h4>
-                    <p>Volunteering for social and environmental justice, 2024</p>
-                </div>
+            <div class="train-card">
+                <h4>Agritech Expo</h4>
+                <p>Exhibitor, 2023</p>
+                <a href="expo.jpg" target="_blank" class="cert-btn">View Photo</a>
+            </div>
+            <div class="train-card">
+                <h4>World Social Forum</h4>
+                <p>Volunteer, 2024</p>
+                <a href="World Social Forum.jpg" target="_blank" class="cert-btn">View Photo</a>
             </div>
         </div>
     </section>
