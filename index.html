@@ -87,15 +87,20 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* About Section (Photo here only) */
+        /* About Section */
         .about-layout { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
         .profile-side { flex: 1; min-width: 280px; text-align: center; }
-        .profile-side img { width: 260px; height: 260px; border-radius: 50%; border: 6px solid var(--accent); object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .profile-side img { width: 260px; height: 260px; border-radius: 50%; border: 6px solid var(--accent); object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.1); margin-bottom: 20px; }
         .about-text { flex: 2; min-width: 300px; }
+
+        .contact-list { margin-top: 15px; list-style: none !important; padding: 0 !important; }
+        .contact-list li { margin-bottom: 8px !important; display: flex; align-items: center; gap: 10px; color: var(--primary); font-weight: 600; font-size: 0.9rem !important; }
+        .contact-list li i { color: var(--accent); width: 20px; }
+        .contact-list li a { color: inherit; text-decoration: none; }
 
         h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 30px; border-left: 6px solid var(--accent); padding-left: 15px; }
 
-        /* Experience Content Styling */
+        /* Experience Items */
         .item { margin-bottom: 45px; border-bottom: 1px solid #f0f0f0; padding-bottom: 30px; }
         .item:last-child { border: none; }
         .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
@@ -123,7 +128,7 @@
         }
         .btn:hover { background: var(--primary); color: white; }
 
-        /* Reference Styling - High Contrast */
+        /* Reference Styling - Dark Bright */
         .ref-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .ref-card { background: #fff; padding: 30px; border: 1px solid #eee; border-radius: 20px; }
         .ref-name { color: #000; font-size: 1.4rem; font-weight: 900; display: block; margin-bottom: 10px; letter-spacing: -0.5px; }
@@ -172,6 +177,11 @@
         <div class="about-layout">
             <div class="profile-side">
                 <img src="IMG_3427.jpg" alt="Sandesh Subedi">
+                <ul class="contact-list">
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:Subedisandesh24@gmail.com">Subedisandesh24@gmail.com</a></li>
+                    <li><i class="fas fa-phone"></i> +977 9866009867</li>
+                    <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/sandeshsubedi24" target="_blank">linkedin.com/in/sandeshsubedi24</a></li>
+                </ul>
             </div>
             <div class="about-text">
                 <h2>About Me</h2>
@@ -184,7 +194,7 @@
         </div>
     </section>
 
-    <!-- EXPERIENCE SECTION (FULL CONTENT RESTORED) -->
+    <!-- EXPERIENCE SECTION -->
     <section id="experience" class="section-box">
         <h2>Professional Experience</h2>
 
@@ -196,7 +206,7 @@
             <span class="item-org">Stromme Foundation, Chitwan</span>
             <ul>
                 <li>Program organized by <strong>Stromme Foundation</strong> and technical support given by <strong>Kantipur Bhauprabidhik Shikshyalaya</strong>.</li>
-                <li>Teach with strong focus on practical, hands-on agricultural education.</li>
+                <li>Teach with strong focus on <strong>practical, hands-on agricultural education</strong>.</li>
                 <li>Deliver practical and theoretical training on key areas: Introductory agriculture, social mobilization, nursery & soil management, fertilizer & pesticide use, horticulture, agronomical crops, post-harvest handling, seed production, mushroom cultivation, apiculture, pisciculture, sericulture, duck farming, agricultural marketing, communication, and entrepreneurship development.</li>
             </ul>
             <a href="Stromme Foundation.jpeg" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
@@ -256,10 +266,10 @@
             <span class="item-org">District Statistics Office, Syangja</span>
             <ul>
                 <li>Collected agricultural census data for the <strong>National Census of Agriculture 2021/22</strong>, conducting household and farm surveys in Syangja to assess farm size, crop production, livestock, and land use patterns.</li>
-                <li>Led field operations, ensuring quality control and timely data collection through door-to-door visits, focusing on inclusive participation of male, female, and Dalit households.</li>
+                <li>Led field operations, ensuring quality control and timely data collection through door-to-door visits, focusing on inclusive participation.</li>
                 <li>Collaborated in teamwork, guiding enumerators and ensuring accurate data through Focus Group Discussions (FGDs) and Key Informant Interviews (KIIs).</li>
                 <li>Planned and organized fieldwork, aligning with the project goals and ensuring effective coordination among enumerators.</li>
-                <li>Conducted interviews with relevant stakeholders to gather essential information for research purposes, as directed by the office.</li>
+                <li>Conducted interviews with relevant stakeholders to gather essential information for research purposes.</li>
             </ul>
             <a href="Agricensus.jpg" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
@@ -270,7 +280,7 @@
         <h2>Education</h2>
         <div class="item">
             <div class="item-header">
-                <h3 class="item-title">M.Sc. Agriculture (Horticulture)</h3>
+                <h3 class="item-title">Masters of Science in Agriculture (Horticulture)</h3>
                 <span class="item-date">2025 - Present</span>
             </div>
             <span class="item-org">Agriculture and Forestry University, Chitwan, Nepal</span>
@@ -279,7 +289,7 @@
 
         <div class="item">
             <div class="item-header">
-                <h3 class="item-title">B.Sc. Agriculture</h3>
+                <h3 class="item-title">Bachelors of Science in Agriculture</h3>
                 <span class="item-date">2019 - 2023</span>
             </div>
             <span class="item-org">Tribhuvan University, IAAS Lamjung, Nepal</span>
@@ -289,7 +299,7 @@
                 <li><strong>Best Presentator</strong> during the defence of Soil Science & Horticulture Department.</li>
             </ul>
             <a href="Upa.jpg" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
-            <a href="Best Presentator.jpg" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Award</a>
+            <a href="Best Presentator.jpg" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
 
         <div class="item">
@@ -306,19 +316,23 @@
     <section id="publications" class="section-box">
         <h2>Research Publications</h2>
         <div class="item" style="border:none;">
-            <p><strong>Subedi, S.</strong>, & Adhikari, S. (2024). Effects of mulching materials on growth and yield of brinjal. <i>Agriculture Development Journal</i>, 17(1), 135–143. <a href="https://doi.org/10.3126/adj.v17i1.67882" target="_blank" style="color:var(--secondary); font-weight:700;">[Link]</a></p>
+            <p><strong>Subedi, S.</strong>, & Adhikari, S. (2024). Effects of mulching materials on growth and yield of brinjal. <i>Agriculture Development Journal</i>, 17(1), 135–143.</p>
+            <a href="https://doi.org/10.3126/adj.v17i1.67882" target="_blank" class="btn"><i class="fas fa-file-alt"></i> View paper</a>
         </div>
         <div class="item" style="border:none;">
-            <p>Jaiswal, M., Kharel, R., & <strong>Subedi, S.</strong> (2024). Response of spring rice varieties on different nitrogen management practices in Kapilvastu, Nepal. <i>Agronomy Journal of Nepal</i>, 8(1), 45–56. <a href="https://doi.org/10.3126/ajn.v8i1.70853" target="_blank" style="color:var(--secondary); font-weight:700;">[Link]</a></p>
+            <p>Jaiswal, M., Kharel, R., & <strong>Subedi, S.</strong> (2024). Response of spring rice varieties on different nitrogen management practices in Kapilvastu, Nepal. <i>Agronomy Journal of Nepal</i>, 8(1), 45–56.</p>
+            <a href="https://doi.org/10.3126/ajn.v8i1.70853" target="_blank" class="btn"><i class="fas fa-file-alt"></i> View paper</a>
         </div>
         <div class="item" style="border:none;">
             <p>Malla, A. B., <strong>Subedi, S.</strong>, G.C., D. B., & Bhandari, J. (2024). Ecological Status, Threats, and Habitat Characteristics of Panchaule (<i>Dactylorhiza hatagirea</i>) in Mustang District. <i>The Journal of Agriculture and Environment</i>, 25, 99–107.</p>
         </div>
         <div class="item" style="border:none;">
-            <p>Dahal, S., <strong>Subedi, S.</strong>, & Paudel, N. (2021). A review on <i>Diploknema butyracea</i> (Roxb.) H.J. Lam. (Chiuri) for production, uses, and strategy of management concerning Chepang communities in Nepal. <i>Journal of Multidisciplinary Sciences</i>. <a href="https://doi.org/10.33888/jms.2021.316" target="_blank" style="color:var(--secondary); font-weight:700;">[Link]</a></p>
+            <p>Dahal, S., <strong>Subedi, S.</strong>, & Paudel, N. (2021). A review on <i>Diploknema butyracea</i> (Roxb.) H.J. Lam. (Chiuri) for production, uses, and strategy of management concerning Chepang communities in Nepal. <i>Journal of Multidisciplinary Sciences</i>, 3(16).</p>
+            <a href="https://doi.org/10.33888/jms.2021.316" target="_blank" class="btn"><i class="fas fa-file-alt"></i> View paper</a>
         </div>
         <div class="item" style="border:none;">
-            <p><strong>Subedi, S.</strong> (2024). Algal diversity in Nepal and its applications: Current insights and future prospects. <i>Science Heritage Journal</i>, 8(2), 69–78. <a href="https://doi.org/10.26480/gws.02.2024.69.78" target="_blank" style="color:var(--secondary); font-weight:700;">[Link]</a></p>
+            <p><strong>Subedi, S.</strong> (2024). Algal diversity in Nepal and its applications: Current insights and future prospects. <i>Science Heritage Journal</i>, 8(2), 69–78.</p>
+            <a href="https://doi.org/10.26480/gws.02.2024.69.78" target="_blank" class="btn"><i class="fas fa-file-alt"></i> View paper</a>
         </div>
     </section>
 
@@ -362,12 +376,12 @@
                 <h3><i class="fas fa-desktop"></i> Software</h3>
                 <span class="tag">Microsoft Office</span> <span class="tag">Arc-GIS</span> 
                 <span class="tag">RStudio</span> <span class="tag">GenStat</span> <span class="tag">SPSS</span>
-                <a href="computer.jpg" target="_blank" class="btn" style="width:100%; justify-content:center;"><i class="fas fa-certificate"></i> View Certificate</a>
+                <a href="computer.jpg" target="_blank" class="btn" style="width:100%; justify-content:center; border-width:1px;"><i class="fas fa-certificate"></i> View Certificate</a>
             </div>
             <div class="skill-card">
                 <h3><i class="fab fa-python"></i> Python AI</h3>
-                <span class="tag">Image detection</span> <span class="tag">Classification</span>
-                <span class="tag">Segmentation</span> <span class="tag">YOLO Models</span>
+                <span class="tag">Image detection</span> <span class="tag">Image Classification</span>
+                <span class="tag">Image Segmentation</span> <span class="tag">Deep Learning</span>
             </div>
             <div class="skill-card">
                 <h3><i class="fas fa-language"></i> Language</h3>
@@ -380,23 +394,23 @@
         </div>
     </section>
 
-    <!-- WEB APPLICATIONS SECTION (FULL RESEARCH DESCRIPTIONS) -->
+    <!-- WEB APPLICATIONS SECTION -->
     <section id="webapps" class="section-box">
         <h2>Web Applications & AI Research</h2>
         <div class="app-box">
             <h3>🍅 Tomato Research (AI-Based Monitoring System)</h3>
             <p>My tomato research focuses on developing an AI-powered smart monitoring system for tomato crop growth, yield estimation, and disease detection using computer vision and deep learning techniques. The system integrates multiple <strong>YOLO-based models</strong> to analyze tomato plants from images and videos under real field conditions.</p>
-            <p style="margin-top:10px;">The research includes: Automated tomato fruit detection and counting, maturity analysis (red, turning, green), video-based monitoring, and leaf disease detection (early blight, late blight, bacterial spot, etc.).</p>
+            <p style="margin-top:10px;">The research includes: Automated tomato fruit detection and counting using deep learning models; Maturity analysis (red, turning, green); Video-based field monitoring; Leaf disease detection (early blight, late blight, bacterial spot, powdery mildew, viral infections); and image-based yield prediction using reference scaling techniques.</p>
             <a href="https://abcp5qmcktvhgfjcpig2np.streamlit.app/" target="_blank" class="btn launch-btn"><i class="fas fa-rocket"></i> Launch Tomato App</a>
         </div>
         <div class="app-box">
             <h3>🐝 Bee Research (Hive Health & Pollinator Monitoring)</h3>
-            <p>AI-based hive health and pollinator monitoring system tracking honeybee species found in Nepal including <i>Apis laboriosa</i>, <i>Apis dorsata</i>, <i>Apis cerana</i>, <i>Apis florea</i>, and <i>Apis mellifera</i>. Supports automated biodiversity assessment and data-driven pollination management.</p>
+            <p>Developing an AI-based hive health and pollinator monitoring system tracking species like <i>Apis laboriosa</i>, <i>Apis dorsata</i>, <i>Apis cerana</i>, <i>Apis florea</i>, and <i>Apis mellifera</i>. Supports automated biodiversity assessment and data-driven pollination management through species-level identification.</p>
             <a href="https://beeenemy.streamlit.app/" target="_blank" class="btn launch-btn"><i class="fas fa-rocket"></i> Launch Bee App</a>
         </div>
     </section>
 
-    <!-- REFERENCES SECTION (DARK BRIGHT NAMES) -->
+    <!-- REFERENCES SECTION -->
     <section id="refs" class="section-box">
         <h2>Professional References</h2>
         <div class="ref-grid">
