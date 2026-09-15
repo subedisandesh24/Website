@@ -64,31 +64,6 @@
         }
         .top-banner h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 5px; letter-spacing: -1px; }
 
-        /* Blinking Call to Action */
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
-        .blink-cta {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: var(--accent);
-            color: #000;
-            font-weight: 800;
-            font-size: 0.85rem;
-            text-decoration: none;
-            border-radius: 20px;
-            animation: blinker 1.2s linear infinite;
-            box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4);
-            transition: 0.3s;
-        }
-        .blink-cta:hover {
-            opacity: 1 !important;
-            animation: none;
-            background-color: white;
-            color: var(--primary);
-        }
-
         /* Container */
         .content-container {
             max-width: 1100px;
@@ -203,9 +178,6 @@
 <div class="top-banner">
     <h1>SANDESH SUBEDI</h1>
     <p>M.Sc. Horticulture | AI & Digital Agriculture Researcher</p>
-    <div>
-        <a href="mailto:Subedisandesh24@gmail.com" class="blink-cta"><i class="fas fa-paper-plane"></i> Drop a Message</a>
-    </div>
 </div>
 
 <div class="content-container">
