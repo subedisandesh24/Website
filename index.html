@@ -64,6 +64,31 @@
         }
         .top-banner h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 5px; letter-spacing: -1px; }
 
+        /* Blinking Call to Action */
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+        .blink-cta {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: var(--accent);
+            color: #000;
+            font-weight: 800;
+            font-size: 0.85rem;
+            text-decoration: none;
+            border-radius: 20px;
+            animation: blinker 1.2s linear infinite;
+            box-shadow: 0 5px 15px rgba(212, 163, 115, 0.4);
+            transition: 0.3s;
+        }
+        .blink-cta:hover {
+            opacity: 1 !important;
+            animation: none;
+            background-color: white;
+            color: var(--primary);
+        }
+
         /* Container */
         .content-container {
             max-width: 1100px;
@@ -178,6 +203,9 @@
 <div class="top-banner">
     <h1>SANDESH SUBEDI</h1>
     <p>M.Sc. Horticulture | AI & Digital Agriculture Researcher</p>
+    <div>
+        <a href="mailto:Subedisandesh24@gmail.com" class="blink-cta"><i class="fas fa-paper-plane"></i> Drop a Message</a>
+    </div>
 </div>
 
 <div class="content-container">
@@ -195,12 +223,12 @@
             </div>
             <div class="about-text">
                 <h2>About Me</h2>
-                <p>I am <strong>Sandesh Subedi</strong>, son of Rishiram Subedi and Sabitri Devi Subedi, born on 25 April 2001 (2058/01/12 B.S.) in Syangja, Nepal. Growing up in a rural agricultural community, I witnessed the dedication, hard work, and resilience of farmers in my village. Observing how agriculture shaped the livelihood of people around me inspired me to develop a strong interest in farming, agricultural development, rural livelihoods, and innovative solutions for the agricultural sector.</p>
-                <p style="margin-top:15px;">I completed my school-level education at Shishu Niketan Secondary School. I am a graduate of B.Sc. Agriculture from Tribhuvan University and currently pursuing an M.S. in Horticulture at Agriculture and Forestry University.</p>
-                <p style="margin-top:15px;">My academic and professional interests focus on agriculture, rural development, artificial intelligence (AI), digital agriculture, research, community development, and technology-driven innovation. I am particularly interested in the application of AI, computer vision, machine learning, and image analysis in agriculture, especially in areas such as crop monitoring, disease detection, yield estimation, precision agriculture, and smart farming systems.</p>
-                <p style="margin-top:15px;">My research and professional experiences include work in agricultural research, image-based data analysis, computer vision applications, tomato crop studies, digital agriculture, AI-driven agricultural tools, field-based programs, training, and community-oriented activities. These experiences have strengthened my interest in working directly with farmers, rural communities, youth, and other stakeholders to understand practical challenges and develop appropriate, evidence-based solutions.</p>
-                <p style="margin-top:15px;">Alongside my interest in agricultural technology and research, I aspire to contribute to NGOs, INGOs, and development organizations working in areas such as agriculture and food security, rural livelihoods, community development, youth and women empowerment, capacity building, climate resilience, sustainable agriculture, and inclusive development. I am particularly interested in opportunities where agricultural knowledge, field experience, research, communication, data-driven approaches, and digital technologies can be combined to improve the livelihoods and resilience of vulnerable and rural communities.</p>
-                <p style="margin-top:15px;">I am passionate about integrating modern technologies with agricultural science and development practice to address practical challenges faced by farmers and agricultural communities. I aspire to contribute to both technology-driven agricultural innovation and people-centered development, helping bridge the gap between traditional farming practices, emerging digital technologies, and inclusive development approaches in Nepal and beyond.</p>
+                <p>I am <strong>Sandesh Subedi</strong>, son of Rishiram Subedi and Sabitri Devi Subedi, born on 25 April 2001 (2058/01/12 B.S.) in Syangja, Nepal. Growing up in a <strong>rural agricultural community</strong>, I witnessed the dedication, hard work, and resilience of farmers in my village. Observing how agriculture shaped the livelihood of people around me inspired me to develop a strong interest in <strong>farming</strong>, <strong>agricultural development</strong>, <strong>rural livelihoods</strong>, and <strong>innovative solutions</strong> for the agricultural sector.</p>
+                <p style="margin-top:15px;">I completed my school-level education at Shishu Niketan Secondary School. I am a graduate of <strong>B.Sc. Agriculture</strong> from Tribhuvan University and currently pursuing an <strong>M.S. in Horticulture</strong> at Agriculture and Forestry University.</p>
+                <p style="margin-top:15px;">My academic and professional interests focus on <strong>agriculture</strong>, <strong>rural development</strong>, <strong>artificial intelligence (AI)</strong>, <strong>digital agriculture</strong>, <strong>research</strong>, community development, and technology-driven innovation. I am particularly interested in the application of AI, <strong>computer vision</strong>, <strong>machine learning</strong>, and image analysis in agriculture, especially in areas such as <strong>crop monitoring</strong>, <strong>disease detection</strong>, <strong>yield estimation</strong>, <strong>precision agriculture</strong>, and <strong>smart farming systems</strong>.</p>
+                <p style="margin-top:15px;">My research and professional experiences include work in <strong>agricultural research</strong>, image-based data analysis, <strong>computer vision applications</strong>, tomato crop studies, <strong>digital agriculture</strong>, AI-driven agricultural tools, field-based programs, training, and community-oriented activities. These experiences have strengthened my interest in working directly with farmers, rural communities, youth, and other stakeholders to understand practical challenges and develop appropriate, evidence-based solutions.</p>
+                <p style="margin-top:15px;">Alongside my interest in agricultural technology and research, I aspire to contribute to <strong>NGOs</strong>, <strong>INGOs</strong>, and development organizations working in areas such as <strong>agriculture and food security</strong>, <strong>rural livelihoods</strong>, community development, youth and women empowerment, capacity building, <strong>climate resilience</strong>, <strong>sustainable agriculture</strong>, and inclusive development. I am particularly interested in opportunities where agricultural knowledge, field experience, research, communication, data-driven approaches, and digital technologies can be combined to improve the livelihoods and resilience of vulnerable and rural communities.</p>
+                <p style="margin-top:15px;">I am passionate about integrating <strong>modern technologies</strong> with agricultural science and development practice to address practical challenges faced by farmers and agricultural communities. I aspire to contribute to both technology-driven agricultural innovation and people-centered development, helping bridge the gap between <strong>traditional farming practices</strong>, emerging digital technologies, and inclusive development approaches in Nepal and beyond.</p>
             </div>
         </div>
     </section>
@@ -213,12 +241,12 @@
             <div class="item-header"><h3>Trainer</h3><span class="item-date">November 2025 - January 2026</span></div>
             <span class="item-org">Stromme Foundation, Chitwan</span>
             <ul>
-                <li>Designed and delivered theoretical and practical agricultural training using hands-on and participatory approaches.</li>
-                <li>Trained participants in crop production, nursery and soil management, horticulture, fertilizer and pesticide management, seed production, mushroom cultivation, apiculture, pisciculture, sericulture, and livestock-related enterprises.</li>
-                <li>Delivered practical sessions on post-harvest handling, agricultural marketing, communication, entrepreneurship development, and social mobilization, linking production activities with livelihood and enterprise opportunities.</li>
+                <li>Designed and delivered <strong>theoretical and practical agricultural training</strong> using hands-on and participatory approaches.</li>
+                <li>Trained participants in <strong>crop production</strong>, <strong>nursery and soil management</strong>, <strong>horticulture</strong>, fertilizer and pesticide management, seed production, <strong>mushroom cultivation</strong>, <strong>apiculture</strong>, pisciculture, sericulture, and livestock-related enterprises.</li>
+                <li>Delivered practical sessions on <strong>post-harvest handling</strong>, <strong>agricultural marketing</strong>, communication, <strong>entrepreneurship development</strong>, and social mobilization, linking production activities with livelihood and enterprise opportunities.</li>
                 <li>Facilitated participant learning through practical demonstrations, field-based activities, technical guidance, and problem-solving approaches.</li>
-                <li>Supported participants in developing knowledge and practical skills relevant to agricultural enterprise development, market-oriented production, and rural livelihoods.</li>
-                <li>Contributed to capacity building and knowledge transfer by translating technical agricultural concepts into practical, field-level learning.</li>
+                <li>Supported participants in developing knowledge and practical skills relevant to <strong>agricultural enterprise development</strong>, market-oriented production, and rural livelihoods.</li>
+                <li>Contributed to <strong>capacity building</strong> and knowledge transfer by translating technical agricultural concepts into practical, field-level learning.</li>
             </ul>
             <a href="Stromme Foundation.jpeg" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
@@ -228,11 +256,11 @@
             <span class="item-org">Daayitwa NGO, Kaski</span>
             <ul>
                 <li>Supported implementation of the <strong>Growth Entrepreneurship and Employment Promotion (GEEP)</strong> program across Jaljala, Hupsekot, Badigad, Siranchok, and Myagde rural municipalities.</li>
-                <li>Contributed to rural enterprise development and entrepreneurship promotion by supporting capacity-building initiatives for local entrepreneurs.</li>
-                <li>Engaged with local entrepreneurs, community stakeholders, local leaders, and government representatives to support inclusive employment and local economic development.</li>
+                <li>Contributed to <strong>rural enterprise development</strong> and <strong>entrepreneurship promotion</strong> by supporting capacity-building initiatives for local entrepreneurs.</li>
+                <li>Engaged with local entrepreneurs, community stakeholders, local leaders, and government representatives to support <strong>inclusive employment</strong> and <strong>local economic development</strong>.</li>
                 <li>Supported coordination between provincial/local governments and grassroots stakeholders for effective implementation of entrepreneurship and employment-related initiatives.</li>
                 <li>Assisted in stakeholder consultations, policy outreach, field-level coordination, and program activities aimed at strengthening the local enabling environment for enterprise development.</li>
-                <li>Supported field-level monitoring, documentation, follow-up, and program implementation, contributing to evidence-based learning and improved delivery of development initiatives.</li>
+                <li>Supported field-level monitoring, documentation, follow-up, and program implementation, contributing to <strong>evidence-based learning</strong> and improved delivery of development initiatives.</li>
             </ul>
         </div>
 
@@ -253,14 +281,14 @@
             <div class="item-header"><h3>Research Assistant</h3><span class="item-date">June - December 2025</span></div>
             <span class="item-org">Horticulture Research Station, NARC, Malepatan, Kaski</span>
             <ul>
-                <li>Supported field-based horticultural research involving crop production, varietal evaluation, crop health, pest and disease management, soil fertility, and performance assessment under practical production conditions.</li>
-                <li>Assisted in planning and implementing agricultural trials, including field preparation, treatment management, crop monitoring, data collection, and documentation.</li>
-                <li>Contributed to the application of digital and <strong>AI-based technologies</strong> for agricultural monitoring and data-driven decision-making, particularly in crop growth, yield, and quality assessment.</li>
+                <li>Supported field-based <strong>horticultural research</strong> involving crop production, <strong>varietal evaluation</strong>, crop health, pest and disease management, soil fertility, and performance assessment under practical production conditions.</li>
+                <li>Assisted in planning and implementing <strong>agricultural trials</strong>, including field preparation, treatment management, crop monitoring, data collection, and documentation.</li>
+                <li>Contributed to the application of digital and <strong>AI-based technologies</strong> for agricultural monitoring and <strong>data-driven decision-making</strong>, particularly in crop growth, yield, and quality assessment.</li>
                 <li>Supported my <strong>M.Sc. Horticulture research</strong> on AI- and manual-based assessment of tomato (<i>Solanum lycopersicum</i> L.) yield and quality under different mulching and fertilizer treatments in Kaski, Nepal.</li>
                 <li>Applied <strong>computer vision</strong>, image analysis, LiDAR-based measurements, and <strong>machine-learning/deep-learning</strong> approaches to assess crop growth, yield-related traits, fruit characteristics, and crop performance.</li>
                 <li>Collected and analyzed field and image-based data and compared AI/digital measurements with conventional manual measurements to evaluate the reliability and practical applicability of technology-assisted agricultural assessment.</li>
-                <li>Used data analysis and statistical approaches to generate evidence for technology-enabled crop monitoring, productivity assessment, and improved agricultural decision-making.</li>
-                <li>Prepared research documentation, analyzed results, and communicated findings to supervisors and research collaborators, strengthening skills in technical reporting, data interpretation, and knowledge sharing.</li>
+                <li>Used data analysis and statistical approaches to generate evidence for <strong>technology-enabled crop monitoring</strong>, productivity assessment, and improved agricultural decision-making.</li>
+                <li>Prepared research documentation, analyzed results, and communicated findings to supervisors and research collaborators, strengthening skills in <strong>technical reporting</strong>, data interpretation, and knowledge sharing.</li>
             </ul>
         </div>
 
@@ -270,10 +298,10 @@
             <ul>
                 <li>Delivered theoretical and practical training on fruit and vegetable production, crop management, pest and disease management, harvesting, post-harvest handling, and agricultural marketing.</li>
                 <li>Guided students through the complete crop production cycle, including nursery preparation, seed sowing, irrigation, transplanting, intercultural operations, pest management, harvesting, and marketing.</li>
-                <li>Supervised the <strong>Learn & Earn Program</strong>, integrating practical entrepreneurship and agricultural value-chain concepts from production and post-harvest handling to market sales and profit distribution.</li>
-                <li>Supported students in developing practical skills related to agricultural enterprise, marketing, value addition, and livelihood-oriented farming.</li>
+                <li>Supervised the <strong>Learn & Earn Program</strong>, integrating practical entrepreneurship and <strong>agricultural value-chain concepts</strong> from production and post-harvest handling to market sales and profit distribution.</li>
+                <li>Supported students in developing practical skills related to <strong>agricultural enterprise</strong>, marketing, value addition, and livelihood-oriented farming.</li>
                 <li>Served as the focal point for the <strong>JICA Partnership Program</strong>, coordinating agricultural activities, supporting project implementation, and maintaining alignment with the program's logical framework.</li>
-                <li>Strengthened learners' practical knowledge through hands-on demonstrations, mentoring, problem-solving, and experiential learning.</li>
+                <li>Strengthened learners' practical knowledge through <strong>hands-on demonstrations</strong>, mentoring, problem-solving, and experiential learning.</li>
             </ul>
             <a href="Mahendra Ma vi.JPG" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
@@ -285,10 +313,10 @@
                 <li>Led a student group from Grades 9–12 of Shree Mahendra Secondary School in implementing a practical <strong>agricultural enterprise project</strong> focused on <strong>papaya and coriander production</strong>, value addition, and market-oriented activities.</li>
                 <li>Guided students through the complete production cycle, including seedbed preparation, seedling production, transplanting, crop management, harvesting, and marketing, providing hands-on learning in <strong>agricultural entrepreneurship</strong>.</li>
                 <li>Supported students in establishing seedbeds and producing coriander and papaya seedlings, with a portion of the seedlings marketed to generate income and demonstrate opportunities for nursery-based enterprise.</li>
-                <li>Coordinated the harvesting and marketing of agricultural produce, supporting students to sell products to nearby shops and understand basic market linkages, customer engagement, pricing, and income generation.</li>
+                <li>Coordinated the harvesting and marketing of agricultural produce, supporting students to sell products to nearby shops and understand basic <strong>market linkages</strong>, customer engagement, pricing, and income generation.</li>
                 <li>Facilitated <strong>value addition</strong> and <strong>post-harvest utilization</strong> of papaya and coriander, including fruit-product preparation and processing, while guiding students in cutting and sun-drying produce for preservation and further use.</li>
                 <li>Integrated practical concepts of <strong>agricultural value chains</strong>, entrepreneurship, value addition, post-harvest management, and local market development into experiential student learning.</li>
-                <li>Led students in teamwork, planning, practical problem-solving, and enterprise-oriented decision-making, strengthening their understanding of how agricultural production can contribute to livelihoods, entrepreneurship, and local economic opportunities.</li>
+                <li>Led students in teamwork, planning, practical problem-solving, and enterprise-oriented decision-making, strengthening their understanding of how agricultural production can contribute to <strong>livelihoods</strong>, entrepreneurship, and local economic opportunities.</li>
             </ul>
         </div>
 
@@ -296,11 +324,11 @@
             <div class="item-header"><h3>Research Assistant</h3><span class="item-date">June 2022 - December 2022</span></div>
             <span class="item-org">Horticulture Research Station, NARC Malepatan, Kaski</span>
             <ul>
-                <li>Supported field-based research and varietal improvement activities covering vegetable, fruit, and ornamental crops, with emphasis on crop performance, production, pest and disease management, and crop health.</li>
+                <li>Supported field-based research and <strong>varietal improvement activities</strong> covering vegetable, fruit, and ornamental crops, with emphasis on crop performance, production, pest and disease management, and crop health.</li>
                 <li>Supported field trial planning, site selection, crop management, soil fertility management, and implementation of research activities.</li>
                 <li>Guided JTAs in field data collection, trial monitoring, site supervision, and implementation of research protocols, contributing to effective field-level capacity building.</li>
                 <li>Developed action plans, monitored research activities, and followed up on implementation to ensure timely completion of planned field activities.</li>
-                <li>Conducted data collection, recording, analysis, interpretation, and documentation, supporting evidence-based agricultural decision-making.</li>
+                <li>Conducted <strong>data collection</strong>, recording, analysis, interpretation, and documentation, supporting evidence-based agricultural decision-making.</li>
                 <li>Prepared technical reports and provided regular progress updates to supervising officers on research activities, field performance, and emerging issues.</li>
                 <li>Provided technical support related to crop production and management, contributing to improved understanding of agricultural productivity and production practices.</li>
             </ul>
@@ -314,10 +342,10 @@
                 <li>Conducted field-level data collection for the <strong>National Census of Agriculture 2021/22</strong>, covering farm size, crop production, livestock, land use, and other agricultural characteristics.</li>
                 <li>Conducted household and farm surveys through direct field visits, ensuring accurate, complete, and timely collection of agricultural information.</li>
                 <li>Supported field-level quality control and verification of collected data while maintaining consistency with survey requirements and objectives.</li>
-                <li>Engaged with diverse farming households and communities to facilitate inclusive participation and effective communication during data collection.</li>
-                <li>Supported Focus Group Discussions (FGDs) and Key Informant Interviews (KIIs) to gather contextual information and strengthen understanding of local agricultural conditions.</li>
+                <li>Engaged with diverse farming households and communities to facilitate <strong>inclusive participation</strong> and effective communication during data collection.</li>
+                <li>Supported <strong>Focus Group Discussions (FGDs)</strong> and <strong>Key Informant Interviews (KIIs)</strong> to gather contextual information and strengthen understanding of local agricultural conditions.</li>
                 <li>Coordinated with enumerator teams and supported fieldwork planning, organization, and implementation across assigned areas.</li>
-                <li>Contributed to systematic agricultural data generation that can support evidence-based planning, agricultural development, and rural livelihood interventions.</li>
+                <li>Contributed to systematic <strong>agricultural data generation</strong> that can support evidence-based planning, agricultural development, and rural livelihood interventions.</li>
             </ul>
             <a href="Agricensus.jpg" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
