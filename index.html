@@ -111,16 +111,16 @@
         .contact-list li i { color: var(--accent); width: 20px; }
         .contact-list li a { color: inherit; text-decoration: none; }
 
-        .about-card {
+        .about-card, .item {
             background: #f9fbf9;
             border-left: 4px solid var(--secondary);
-            padding: 20px 25px;
+            padding: 25px 30px;
             border-radius: 0 15px 15px 0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.02);
             transition: transform 0.3s ease;
         }
-        .about-card:hover {
+        .about-card:hover, .item:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.05);
         }
@@ -138,9 +138,8 @@
 
         h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 30px; border-left: 6px solid var(--accent); padding-left: 15px; }
 
-        /* Experience Items */
-        .item { margin-bottom: 45px; border-bottom: 1px solid #f0f0f0; padding-bottom: 30px; }
-        .item:last-child { border: none; }
+        /* Experience Items Styling */
+        .item { border-bottom: none; }
         .item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
         .item-title { font-size: 1.35rem; font-weight: 800; color: var(--primary); }
         .item-date { color: var(--accent); font-weight: 700; font-size: 0.9rem; }
@@ -165,12 +164,6 @@
             transition: 0.3s;
         }
         .btn:hover { background: var(--primary); color: white; }
-
-        /* Rotated Certificate Class */
-        .rotate-cert {
-            transform: rotate(180deg);
-            display: inline-flex;
-        }
 
         /* WEB APPLICATIONS (BRIGHT STYLE) */
         .app-box { 
@@ -329,7 +322,7 @@
             </ul>
         </div>
 
-        <!-- Harihar Women Savings Experience (Rotated Certificate) -->
+        <!-- Harihar Women Savings Experience (Straight Text Button, Rotated Image via ###-#rotate=180 or style injection / CSS image handler) -->
         <div class="item">
             <div class="item-header"><h3>Trainer</h3><span class="item-date">April 29 - May 5, 2024</span></div>
             <span class="item-org">Harihar Women Savings and Loan Cooperatives Limited, Pokhara, Nepal</span>
@@ -340,7 +333,8 @@
                 <li>Facilitated practical learning on farm management, post-harvest handling, marketing, and agricultural entrepreneurship.</li>
                 <li>Supported participants through capacity building, technical guidance, and field-based demonstrations.</li>
             </ul>
-            <a href="Harihar training.JPG" target="_blank" class="btn rotate-cert"><i class="fas fa-certificate"></i> View Certificate</a>
+            <!-- Opens the image with a CSS filter/transform applied via an embedded data URL or inline trick, or standard view with normal text button -->
+            <a href="Harihar training.JPG##transform:rotate(180deg);" target="_blank" class="btn" onclick="if(!this.href.includes('#')) {this.href='Harihar training.JPG';}"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
 
         <div class="item">
@@ -665,6 +659,24 @@
         element.classList.add('active');
         window.scrollTo({ top: 150, behavior: 'smooth' });
     }
+
+    // Handles rotating the Harihar certificate image 180 degrees when opened via browser view, keeping button text straight
+    document.addEventListener('click', function(e) {
+        let target = e.target.closest('a');
+        if (target && target.getAttribute('href') && target.getAttribute('href').includes('Harihar training.JPG')) {
+            e.preventDefault();
+            let win = window.open('', '_blank');
+            win.document.write(`
+                <html>
+                <head><title>Harihar training.JPG (Rotated)</title></head>
+                <body style="margin:0; background:#000; display:flex; justify-content:center; align-items:center; height:100vh;">
+                    <img src="Harihar training.JPG" style="transform: rotate(180deg); max-width:100%; max-height:100%; object-fit:contain;" />
+                </body>
+                </html>
+            `);
+            win.document.close();
+        }
+    });
 </script>
 
 </body>
