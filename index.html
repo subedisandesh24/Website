@@ -88,12 +88,25 @@
         }
 
         /* About Section */
-        .about-layout { display: flex; gap: 40px; align-items: center; flex-wrap: wrap; }
-        .profile-side { flex: 1; min-width: 280px; text-align: center; }
-        .profile-side img { width: 260px; height: 260px; border-radius: 50%; border: 6px solid var(--accent); object-fit: cover; box-shadow: 0 15px 30px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .about-text { flex: 2; min-width: 300px; }
+        .about-text h2 { margin-top: 0; }
+        .profile-float {
+            float: left;
+            width: 260px;
+            text-align: center;
+            margin-right: 35px;
+            margin-bottom: 20px;
+        }
+        .profile-float img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            border: 6px solid var(--accent);
+            object-fit: cover;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
 
-        .contact-list { margin-top: 15px; list-style: none !important; padding: 0 !important; text-align: left; display: inline-block; }
+        .contact-list { list-style: none !important; padding: 0 !important; text-align: left; display: inline-block; }
         .contact-list li { margin-bottom: 8px !important; display: flex; align-items: center; gap: 10px; color: var(--primary); font-weight: 600; font-size: 0.9rem !important; }
         .contact-list li i { color: var(--accent); width: 20px; }
         .contact-list li a { color: inherit; text-decoration: none; }
@@ -128,6 +141,12 @@
         }
         .btn:hover { background: var(--primary); color: white; }
 
+        /* Rotated Certificate Class */
+        .rotate-cert {
+            transform: rotate(180deg);
+            display: inline-flex; /* Ensures transform applies correctly to inline elements */
+        }
+
         /* WEB APPLICATIONS (BRIGHT STYLE) */
         .app-box { 
             background: #0b2218; 
@@ -156,7 +175,7 @@
         @media (max-width: 768px) {
             nav { bottom: 15px; top: auto; overflow-x: auto; justify-content: flex-start; }
             .section-box { padding: 30px 20px; }
-            .about-layout { flex-direction: column; }
+            .profile-float { float: none; width: 100%; margin-right: 0; margin-bottom: 30px; }
         }
     </style>
 </head>
@@ -184,8 +203,10 @@
 
     <!-- 1) ABOUT SECTION -->
     <section id="about" class="section-box active">
-        <div class="about-layout">
-            <div class="profile-side">
+        <div class="about-text">
+            <h2>About Me</h2>
+            
+            <div class="profile-float">
                 <img src="IMG_3427.jpg" alt="Sandesh Subedi">
                 <ul class="contact-list">
                     <li><i class="fas fa-envelope"></i> <a href="mailto:Subedisandesh24@gmail.com">Subedisandesh24@gmail.com</a></li>
@@ -193,17 +214,18 @@
                     <li><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/sandeshsubedi24" target="_blank">LinkedIn Profile</a></li>
                 </ul>
             </div>
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>I am <strong>Sandesh Subedi</strong>, son of Rishiram Subedi and Sabitri Devi Subedi, born on 25 April 2001 (2058/01/12 B.S.) in Syangja, Nepal. Growing up in a <strong>rural agricultural community</strong>, I witnessed the dedication, hard work, and resilience of farmers and observed how agriculture shaped the livelihoods and local economy of rural households. This experience inspired my strong interest in <strong>agriculture, agricultural development, rural livelihoods, entrepreneurship, value-chain development, and innovative solutions</strong> for rural communities.</p>
-                <p style="margin-top:15px;">I completed my school-level education at Shishu Niketan Secondary School and earned my <strong>B.Sc. in Agriculture from Tribhuvan University</strong>. I am currently pursuing an <strong>M.S. in Horticulture at Agriculture and Forestry University (AFU)</strong>, where my academic and research work has strengthened my understanding of crop production, horticulture, agricultural research, data analysis, and technology-based agricultural innovation.</p>
-                <p style="margin-top:15px;">My academic and professional interests span <strong>agriculture, rural development, agribusiness, agricultural value chains, youth entrepreneurship, community development, digital agriculture, artificial intelligence (AI), and technology-driven innovation</strong>. I am particularly interested in applying <strong>AI, computer vision, machine learning, image analysis, and digital tools</strong> to agriculture, especially for <strong>crop monitoring, disease detection, yield estimation, precision agriculture, smart farming, and data-driven decision-making</strong>.</p>
-                <p style="margin-top:15px;">My research and professional experiences include <strong>agricultural research, digital agriculture, AI-based agricultural applications, computer vision, image-based data analysis, tomato crop research, field-based development programs, agricultural training, youth engagement, entrepreneurship development, value-chain activities, and community-oriented initiatives</strong>. Through these experiences, I have developed practical skills in <strong>training and capacity building, stakeholder engagement, field implementation, data collection and analysis, monitoring and reporting, agricultural production, post-harvest management, market-oriented activities, and knowledge sharing</strong>.</p>
-                <p style="margin-top:15px;">My M.S. research has further strengthened my experience in integrating <strong>digital technologies and agricultural science</strong>. I have worked on the application of AI and digital approaches for assessing <strong>tomato growth, yield, and quality</strong>, including the comparison of AI/image-based measurements with conventional manual data collection. This has strengthened my ability to connect emerging technologies with practical agricultural challenges and field-level decision-making.</p>
-                <p style="margin-top:15px;">Alongside my technical and research interests, I have developed a strong interest in <strong>people-centered rural development</strong>. Through my experiences in agricultural training, youth programs, entrepreneurship initiatives, community engagement, and field-based development activities, I have worked with <strong>students, youth, farmers, local communities, entrepreneurs, government stakeholders, development organizations, and agricultural professionals</strong>. These experiences have strengthened my ability to communicate technical knowledge in practical ways, facilitate learning, coordinate stakeholders, and contribute to locally relevant development initiatives.</p>
-                <p style="margin-top:15px;">I aspire to contribute to <strong>NGOs, INGOs, development organizations, agricultural programs, and social enterprises</strong> working in areas such as <strong>agriculture and food security, rural livelihoods, agribusiness and value-chain development, youth and women empowerment, entrepreneurship and employment, capacity building, digital transformation, climate resilience, sustainable agriculture, and inclusive rural development</strong>. I am particularly interested in opportunities where <strong>agricultural knowledge, digital technologies, research, field experience, entrepreneurship, stakeholder engagement, and data-driven approaches</strong> can be combined to improve livelihoods and strengthen the resilience of rural communities.</p>
-                <p style="margin-top:15px;">I am passionate about <strong>bridging agricultural science, digital innovation, and people-centered development</strong>. My long-term goal is to contribute to practical solutions that connect <strong>farmers and rural communities with knowledge, technology, markets, entrepreneurship opportunities, and appropriate services</strong>, while promoting sustainable and inclusive agricultural development. I aspire to help bridge the gap between <strong>traditional farming practices, modern agricultural technologies, value-chain opportunities, and inclusive development approaches</strong> in Nepal and beyond.</p>
-            </div>
+
+            <p>I am <strong>Sandesh Subedi</strong>, son of Rishiram Subedi and Sabitri Devi Subedi, born on 25 April 2001 (2058/01/12 B.S.) in Syangja, Nepal. Growing up in a <strong>rural agricultural community</strong>, I witnessed the dedication, hard work, and resilience of farmers and observed how agriculture shaped the livelihoods and local economy of rural households. This experience inspired my strong interest in <strong>agriculture, agricultural development, rural livelihoods, entrepreneurship, value-chain development, and innovative solutions</strong> for rural communities.</p>
+            
+            <div style="clear: both;"></div>
+
+            <p style="margin-top:15px;">I completed my school-level education at Shishu Niketan Secondary School and earned my <strong>B.Sc. in Agriculture from Tribhuvan University</strong>. I am currently pursuing an <strong>M.S. in Horticulture at Agriculture and Forestry University (AFU)</strong>, where my academic and research work has strengthened my understanding of crop production, horticulture, agricultural research, data analysis, and technology-based agricultural innovation.</p>
+            <p style="margin-top:15px;">My academic and professional interests span <strong>agriculture, rural development, agribusiness, agricultural value chains, youth entrepreneurship, community development, digital agriculture, artificial intelligence (AI), and technology-driven innovation</strong>. I am particularly interested in applying <strong>AI, computer vision, machine learning, image analysis, and digital tools</strong> to agriculture, especially for <strong>crop monitoring, disease detection, yield estimation, precision agriculture, smart farming, and data-driven decision-making</strong>.</p>
+            <p style="margin-top:15px;">My research and professional experiences include <strong>agricultural research, digital agriculture, AI-based agricultural applications, computer vision, image-based data analysis, tomato crop research, field-based development programs, agricultural training, youth engagement, entrepreneurship development, value-chain activities, and community-oriented initiatives</strong>. Through these experiences, I have developed practical skills in <strong>training and capacity building, stakeholder engagement, field implementation, data collection and analysis, monitoring and reporting, agricultural production, post-harvest management, market-oriented activities, and knowledge sharing</strong>.</p>
+            <p style="margin-top:15px;">My M.S. research has further strengthened my experience in integrating <strong>digital technologies and agricultural science</strong>. I have worked on the application of AI and digital approaches for assessing <strong>tomato growth, yield, and quality</strong>, including the comparison of AI/image-based measurements with conventional manual data collection. This has strengthened my ability to connect emerging technologies with practical agricultural challenges and field-level decision-making.</p>
+            <p style="margin-top:15px;">Alongside my technical and research interests, I have developed a strong interest in <strong>people-centered rural development</strong>. Through my experiences in agricultural training, youth programs, entrepreneurship initiatives, community engagement, and field-based development activities, I have worked with <strong>students, youth, farmers, local communities, entrepreneurs, government stakeholders, development organizations, and agricultural professionals</strong>. These experiences have strengthened my ability to communicate technical knowledge in practical ways, facilitate learning, coordinate stakeholders, and contribute to locally relevant development initiatives.</p>
+            <p style="margin-top:15px;">I aspire to contribute to <strong>NGOs, INGOs, development organizations, agricultural programs, and social enterprises</strong> working in areas such as <strong>agriculture and food security, rural livelihoods, agribusiness and value-chain development, youth and women empowerment, entrepreneurship and employment, capacity building, digital transformation, climate resilience, sustainable agriculture, and inclusive rural development</strong>. I am particularly interested in opportunities where <strong>agricultural knowledge, digital technologies, research, field experience, entrepreneurship, stakeholder engagement, and data-driven approaches</strong> can be combined to improve livelihoods and strengthen the resilience of rural communities.</p>
+            <p style="margin-top:15px;">I am passionate about <strong>bridging agricultural science, digital innovation, and people-centered development</strong>. My long-term goal is to contribute to practical solutions that connect <strong>farmers and rural communities with knowledge, technology, markets, entrepreneurship opportunities, and appropriate services</strong>, while promoting sustainable and inclusive agricultural development. I aspire to help bridge the gap between <strong>traditional farming practices, modern agricultural technologies, value-chain opportunities, and inclusive development approaches</strong> in Nepal and beyond.</p>
         </div>
     </section>
 
@@ -266,7 +288,7 @@
             </ul>
         </div>
 
-        <!-- NEWLY ADDED EXPERIENCE -->
+        <!-- Harihar Women Savings Experience (Rotated Certificate) -->
         <div class="item">
             <div class="item-header"><h3>Trainer</h3><span class="item-date">April 29 - May 5, 2024</span></div>
             <span class="item-org">Harihar Women Savings and Loan Cooperatives Limited, Pokhara, Nepal</span>
@@ -277,7 +299,7 @@
                 <li>Facilitated practical learning on farm management, post-harvest handling, marketing, and agricultural entrepreneurship.</li>
                 <li>Supported participants through capacity building, technical guidance, and field-based demonstrations.</li>
             </ul>
-            <a href="Harihar training.JPG" target="_blank" class="btn"><i class="fas fa-certificate"></i> View Certificate</a>
+            <a href="Harihar training.JPG" target="_blank" class="btn rotate-cert"><i class="fas fa-certificate"></i> View Certificate</a>
         </div>
 
         <div class="item">
