@@ -6,6 +6,10 @@
     <title>Sandesh Subedi | Agriculture & AI Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- LOADS YOUR KEY SAFELY FROM SEPARATE CONFIG FILE -->
+    <script src="config.js"></script>
+
     <style>
         :root {
             --primary: #1b4332; 
@@ -935,9 +939,6 @@
         <div class="modal-body">
             <!-- Left: Contact Form -->
             <form id="collaborateForm" class="form-box">
-                <!-- Pre-configured with your verified Web3Forms Key -->
-                <input type="hidden" name="access_key" value="8432d9d5-982f-436f-80fa-9a88d9a0cd65">
-
                 <input type="text" name="name" class="form-input" placeholder="Your Name" required>
                 <input type="email" name="email" class="form-input" placeholder="Your Email Address" required>
                 <input type="text" name="subject" class="form-input" placeholder="Subject" required>
@@ -1041,7 +1042,7 @@
         }
     });
 
-    // INSTANT SUBMISSION WITH ZERO BLOCKING CHECKS
+    // CRASH-PROOF SUBMISSION SCRIPT
     const collabForm = document.getElementById('collaborateForm');
     const formStatus = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
@@ -1054,8 +1055,13 @@
         formStatus.style.display = 'none';
 
         const formData = new FormData(collabForm);
-        // Guaranteed injection of your verified access key
-        formData.set('access_key', '505677de-d225-45a0-b7a6-67102769382a');
+
+        // Reads key safely from config.js (fallback to your key if config.js is missing)
+        const activeKey = (typeof WEB3FORMS_ACCESS_KEY !== 'undefined') 
+                          ? WEB3FORMS_ACCESS_KEY 
+                          : '8432d9d5-982f-436f-80fa-9a88d9a0cd65';
+
+        formData.set('access_key', activeKey);
 
         try {
             const response = await fetch('https://api.web3forms.com/submit', {
@@ -1073,7 +1079,7 @@
                 formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! Sandesh has received your email.';
                 collabForm.reset();
             } else {
-                throw new Error(result.message || 'Submission error');
+                throw new Error(result.message || 'Submission failed');
             }
         } catch (err) {
             formStatus.style.display = 'block';
