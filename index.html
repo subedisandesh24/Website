@@ -356,9 +356,15 @@
             box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.12);
         }
         .form-input::placeholder { color: #8a9c92; }
+
+        /* EXTENDABLE / EXPANDABLE MESSAGE TEXTBOX */
         textarea.form-input {
-            resize: vertical;
-            min-height: 100px;
+            resize: vertical;          /* Allows user to drag and extend manually */
+            min-height: 120px;         /* Base starting height */
+            max-height: 400px;         /* Prevents breaking layout */
+            overflow-y: auto;          /* Smooth scroll if message is long */
+            line-height: 1.6;
+            field-sizing: content;     /* Modern auto-expand support */
         }
 
         .submit-btn {
@@ -947,7 +953,8 @@
                 <input type="text" name="name" class="form-input" placeholder="Your Name" required>
                 <input type="email" name="email" class="form-input" placeholder="Your Email Address" required>
                 <input type="text" name="subject" class="form-input" placeholder="Subject" required>
-                <textarea name="message" class="form-input" placeholder="Your Message" rows="4" required></textarea>
+                <!-- EXTENDABLE TEXTAREA (AUTO-EXPANDS AND DRAGGABLE) -->
+                <textarea name="message" class="form-input" placeholder="Your Message" rows="4" required oninput="autoExpand(this)"></textarea>
 
                 <div id="formStatus"></div>
 
@@ -1004,6 +1011,12 @@
         document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
         element.classList.add('active');
         window.scrollTo({ top: 150, behavior: 'smooth' });
+    }
+
+    // Auto-expands textarea as user types longer messages
+    function autoExpand(el) {
+        el.style.height = 'auto';
+        el.style.height = (el.scrollHeight) + 'px';
     }
 
     // Rotate Harihar training certificate on click
@@ -1092,6 +1105,9 @@
                 formStatus.style.border = '1px solid #badbcc';
                 formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! Sandesh has received your email.';
                 collabForm.reset();
+                // Reset textarea height back to standard after sending
+                const msgBox = collabForm.querySelector('textarea');
+                if (msgBox) msgBox.style.height = '120px';
             } else {
                 throw new Error(result.message || 'Submission failed');
             }
