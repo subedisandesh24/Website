@@ -386,11 +386,12 @@
 
         #formStatus {
             display: none;
-            padding: 10px 14px;
+            padding: 12px 16px;
             border-radius: 10px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-top: 4px;
+            line-height: 1.4;
         }
 
         /* Contact Details sidebar in Light Theme */
@@ -937,6 +938,9 @@
                 <!-- IMPORTANT: Paste your Web3Forms access key below -->
                 <input type="hidden" name="access_key" id="accessKey" value="YOUR_ACCESS_KEY_HERE">
 
+                <!-- Hidden bot protection & settings -->
+                <input type="checkbox" name="botcheck" style="display: none;">
+
                 <input type="text" name="name" id="senderName" class="form-input" placeholder="Your Name" required>
                 <input type="email" name="email" id="senderEmail" class="form-input" placeholder="Your Email Address" required>
                 <input type="text" name="subject" id="msgSubject" class="form-input" placeholder="Subject" required>
@@ -1040,7 +1044,7 @@
         }
     });
 
-    // DIRECT BACKGROUND DELIVERY TO GMAIL
+    // ROCK-SOLID BACKGROUND DELIVERY (PREVENTS GMAIL THREAD COLLAPSE)
     const collabForm = document.getElementById('collaborateForm');
     const formStatus = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
@@ -1050,14 +1054,13 @@
 
         const accessKey = document.getElementById('accessKey').value.trim();
 
-        // Warning if key hasn't been pasted yet
         if (!accessKey || accessKey === '8432d9d5-982f-436f-80fa-9a88d9a0cd65') {
             formStatus.style.display = 'block';
             formStatus.style.color = '#842029';
             formStatus.style.background = '#f8d7da';
             formStatus.style.border = '1px solid #f5c2c7';
             formStatus.innerHTML = `
-                ⚠️ Setup needed: Get your free key at <a href="https://web3forms.com" target="_blank" style="color:#842029; font-weight:bold;">web3forms.com</a> and paste it into the script at <code>YOUR_ACCESS_KEY_HERE</code>.
+                ⚠️ Please paste your Web3Forms access key on line 496 in the HTML file where it says <code>YOUR_ACCESS_KEY_HERE</code>.
             `;
             return;
         }
@@ -1066,23 +1069,26 @@
         submitBtn.innerHTML = '<span>Sending...</span> <i class="fas fa-spinner fa-spin"></i>';
         formStatus.style.display = 'none';
 
-        const payload = {
-            access_key: accessKey,
-            name: document.getElementById('senderName').value,
-            email: document.getElementById('senderEmail').value,
-            subject: document.getElementById('msgSubject').value,
-            message: document.getElementById('msgBody').value,
-            from_name: "Portfolio Collaboration"
-        };
+        const nameVal = document.getElementById('senderName').value.trim();
+        const emailVal = document.getElementById('senderEmail').value.trim();
+        const subjectVal = document.getElementById('msgSubject').value.trim();
+        const messageVal = document.getElementById('msgBody').value.trim();
+
+        // Unique timestamp and subject prevents Gmail from bundling the message into old test threads
+        const uniqueSubject = `[Inquiry] ${subjectVal} (From: ${nameVal} - ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})})`;
+
+        const formData = new FormData();
+        formData.append('access_key', accessKey);
+        formData.append('name', nameVal);
+        formData.append('email', emailVal);
+        formData.append('subject', uniqueSubject);
+        formData.append('from_name', nameVal);
+        formData.append('message', messageVal);
 
         try {
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json' 
-                },
-                body: JSON.stringify(payload)
+                body: formData
             });
 
             const result = await response.json();
@@ -1092,10 +1098,10 @@
                 formStatus.style.color = '#0f5132';
                 formStatus.style.background = '#d1e7dd';
                 formStatus.style.border = '1px solid #badbcc';
-                formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! Sandesh has received your email.';
+                formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Message sent successfully! Sandesh has received your message.';
                 collabForm.reset();
             } else {
-                throw new Error(result.message || 'Submission error');
+                throw new Error(result.message || 'Submission failed');
             }
         } catch (err) {
             formStatus.style.display = 'block';
