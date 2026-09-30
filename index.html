@@ -883,6 +883,11 @@
                 <span class="tag">Image Segmentation</span> <span class="tag">Deep Learning</span>
             </div>
             <div class="skill-card">
+                <h3><i class="fas fa-id-card"></i> Driving License</h3>
+                <span class="tag">Category A (Motorcycle, Scooter, Moped)</span>
+                <span class="tag">Category B (Car, Jeep, Delivery Van)</span>
+            </div>
+            <div class="skill-card">
                 <h3><i class="fas fa-language"></i> Language</h3>
                 <span class="tag">Nepali (Native)</span> <span class="tag">English (Professional)</span>
             </div>
@@ -1042,7 +1047,7 @@
         }
     });
 
-    // 100% RELIABLE JSON SUBMISSION WITH DUAL-KEY SAFETY
+    // CRASH-PROOF JSON ENGINE WITH DUAL-SAFETY
     const collabForm = document.getElementById('collaborateForm');
     const formStatus = document.getElementById('formStatus');
     const submitBtn = document.getElementById('submitBtn');
@@ -1057,13 +1062,13 @@
         const formData = new FormData(collabForm);
         const object = Object.fromEntries(formData);
 
-        // 1. Reads from config.js if available.
-        // 2. Automatically falls back to your real key so it NEVER breaks or crashes!
+        // 1. Reads from config.js if available
+        // 2. Automatically falls back to your verified key so it never fails!
         object.access_key = (typeof WEB3FORMS_ACCESS_KEY !== 'undefined' && WEB3FORMS_ACCESS_KEY.length > 5)
                             ? WEB3FORMS_ACCESS_KEY 
                             : '8432d9d5-982f-436f-80fa-9a88d9a0cd65';
 
-        // Prevents Gmail from bundling new inquiries into old test threads
+        // Unique timestamp prevents Gmail from grouping messages into test threads
         object.subject = `Portfolio Inquiry: ${object.subject} (${new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})})`;
         
         const jsonPayload = JSON.stringify(object);
