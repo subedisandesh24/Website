@@ -1091,7 +1091,7 @@
                 body: formData
             });
 
-            const result = await response.json();
+            alert("Web3Forms says: " + JSON.stringify(result));
 
             if (result.success) {
                 formStatus.style.display = 'block';
